@@ -1,68 +1,86 @@
 {
     "userInterface": {
-        "header": "Bevægelser i teksten 1",
+        "header": "Søen som økosystem",
         "instruktion": "Placer tekststykkerne, så de står i den rigtige rækkefølge.",
         "instruktion_2": "Klik på ikonerne. Vælg for hvert tekststykke om den er i helikopterperspektiv eller zoomet ind.",
         "titel": "Nytårsforsætter"
     },
-    "overlays": [{
+    "elementer": [{
+        "element": "Sol",
+        "infotekst": "Al energi på jorden stammer fra solen.<br/>Energien fra solen omdannes i planterne gennem fotosyntese. ",
+        "pic": "img/sol.png",
+        "balance_pos": ["60", "10"],
+        "ubalance_pos": ["", ""]
+
+    }, {
+        "element": "Alger",
+        "infotekst": "Planteplankton er små (ofte encellede) organismer, der lever/flyder i vand og som indeholder klorofyl. De kan derfor udføre fotosyntese. Planteplankton kaldes også mikroalger, eller bare alger. De kan både være encellede eller flercellede Nogle alger er prokaryote - altså uden kerne (de kaldes cyanobakterier), andre er eukaryote.",
+        "pic": "img/sol.png",
+        "balance_pos": ["12", "37"],
+        "ubalance_pos": ["", ""]
+
+    }, {
+        "element": "Dyreplankton",
+        "infotekst": "",
+        "pic": [""],
+        "balance_pos": ["12", "37"],
+        "ubalance_pos": ""
+
+    }, {
+        "element": "Fredfisk",
+        "infotekst": "Fredfisk er fisk, der ikke lever af at spise andre fisk, men i stedet lever af smådyr, insekter og plantedele. Eksempler på fredfisk er karpe, skalle og brasen. Brasen kan lave sin mund om til et rør, så den kan “støvsuge” mudder op fra bunden, og på den måde indtage orme, larver, snegle, insekter og muslinger. Brasener har ikke har tænder i munden, så føden knuses i dens svælg.",
+        "pic": "img/fredfisk.png",
+        "balance_pos": ["30", "60"],
+        "ubalance_pos": ["", ""]
+
+    }, {
+        "element": "Rovfisk",
+        "infotekst": "",
+        "pic": [""],
+        "balance_pos": ["12", "37"],
+        "ubalance_pos": ""
+
+    }, {
+        "element": "Bundplanter",
+        "infotekst": "",
+        "pic": [""],
+        "balance_pos": "",
+        "ubalance_pos": ""
+
+    }, {
+        "element": "Døde planter og dyr på bunden",
+        "infotekst": "",
+        "pic": [""],
+        "balance_pos": "",
+        "ubalance_pos": ""
+
+    }, {
+        "element": "Nedbrydere(bunddyr + bakterier)",
+        "infotekst": "",
+        "pic": [""],
+        "balance_pos": "",
+        "ubalance_pos": ""
 
     }],
-    "zoom_punkter": [{
-            "simplegif_position": ["65.5", "13.5"],
-            "label_position": ["25.7", "65"],
-
-            "simple_gif": "simplegif/SimpleGIF_vulkan.png",
-            "header": "Fotosyntese",
-            "overskrift": [""],
-            "slides": [{
-                "tab": [{
-                    "pic": "animatedgif/bigGIFfotosyntese_info.png",
-                    "txt": "I kloroplasterne (grønkornene) i planteceller omdannes vand og kuldioxid vha. energi fra sollys til glukose og fri ilt. Rækken af processer hvor denne omdannelse sker kaldes fotosyntese. Fotosyntesen finder sted i planter og alger. I nogle bakterier foregår der også fotosyntese . <br/>I fotosyntesen  optages der kulstof fra atmosfæren i biosfæren."
-                }, {
-                    "pic": "animatedgif/bigGIFfotosyntese_kemi.png",
-                    "txt": "Fotosyntesen beskrives ved reaktionsligningen 6CO<sub>2</sub> + 12H<sub>2</sub>0 (sollys - over pilen) → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>+6H<sub>2</sub>0 + 6O<sub>2</sub>. <br/>Den inddeles i to dele: Lysprocessen og Calvins cyklus.<br/>Hastigheden af fotosyntesen er afhængig af flere forhold: Mængden af lys, kuldioxid og vand samt temperaturen. Optaget af CO<sub>2</sub> via fotosyntesen fra et givent område vil derfor variere på forskellige tider på døgnet og på forskellige årstider."
-                }]
-            }]
-        }, {
-            "simplegif_position": ["65.5", "13.5"],
-            "label_position": ["25.7", "25"],
-
-            "simple_gif": "simplegif/SimpleGIF_vulkan.png",
-            "header": "Forvitring af bjerarter",
-            "overskrift": [""],
-            "slides": [{
-                "tab": [{
-                    "pic": "animatedgif/bigGIFforvitringbjergarter_info.png",
-                    "txt": "Ved forvitring af bjergarter bruges kulstof fra atmosfæren. Nedbrydningsprodukterne føres ud i havet. <br/>Ved processen føres der altså kulstof fra atmosfæren til hydrosfæren."
-                }, {
-                    "pic": "animatedgif/bigGIFforvitringbjergarter_kemi.png",
-                    "txt": "Forvitring af kalkbjergarter kan beskrives ved reaktionsligningen: CO<sub>2</sub> + H<sub>2</sub>O + CaCO<sub>3</sub> → Ca <sup>2+</sup> + 2HCO<sub>3</sub><sup>-</sup> <br/>Forvitring af silikatbjergarter kan beskrives ved reaktionsligningen: 2CO<sub>2</sub> + H<sub>2</sub>O + CaSiO<sub>3</sub> → Ca<sup>2+</sup>+2HCO<sub>3</sub><sup>-</sup> + SiO<sub>2</sub>"
-                }]
-            }]
-        },
-
-        {
-            "simplegif_position": ["80.5", "45"],
-            "label_position": ["80.7", "59"],
-
-            "simple_gif": "simplegif/SimpleGIF_skovafbraending.png",
-            "header": "Skovafbrænding",
-            "infotekster": [
-                ["simplegif/SimpleGIF_vulkan.png", "1 Vulkanudbrud", "Den afgassede kalk kommer ud i atmosfæren via et vulkanudbrud.", "Kemi: CO2 og der kan være vulkanske bjergarter med stort indhold af CaCO3"],
-                ["simplegif/SimpleGIF_vulkan.png", "2 Vulkanudbrud", "Den afgassede kalk kommer ud i atmosfæren via et vulkanudbrud.", "Kemi: CO2 og der kan være vulkanske bjergarter med stort indhold af CaCO3"],
-                ["simplegif/SimpleGIF_vulkan.png", "3 Vulkanudbrud", "Den afgassede kalk kommer ud i atmosfæren via et vulkanudbrud.", "Kemi: CO2 og der kan være vulkanske bjergarter med stort indhold af CaCO3"]
-            ]
-        }, {
-            "simplegif_position": ["80.5", "45"],
-            "label_position": ["50.7", "75"],
-            "simple_gif": "",
-            "header": "Vand",
-            "infotekster": [
-                ["simplegif/SimpleGIF_vulkan.png", "1 Vulkanudbrud", "Den afgassede kalk kommer ud i atmosfæren via et vulkanudbrud.", "Kemi: CO2 og der kan være vulkanske bjergarter med stort indhold af CaCO3"],
-                ["simplegif/SimpleGIF_vulkan.png", "2 Vulkanudbrud", "Den afgassede kalk kommer ud i atmosfæren via et vulkanudbrud.", "Kemi: CO2 og der kan være vulkanske bjergarter med stort indhold af CaCO3"],
-                ["simplegif/SimpleGIF_vulkan.png", "3 Vulkanudbrud", "Den afgassede kalk kommer ud i atmosfæren via et vulkanudbrud.", "Kemi: CO2 og der kan være vulkanske bjergarter med stort indhold af CaCO3"]
-            ]
-        }
-    ]
+    "balance_spm": [{
+        "spm": "Hvad er det første led i søens græsningsfødekæde (1. trofiske niveau)",
+        "svar": "Alger og bundplanter",
+        "forkerte_svar": ["Fredfisk", "Dyreplankton"]
+    }, {
+        "spm": "Hvilke organismer spiser algerne? (2. trofiske niveau)",
+        "svar": ["Dyreplankton"],
+        "forkerte_svar": ["Bundplanter","Rovfisk"]
+    }],
+    "ubalance_spm": [{
+        "spm": "Hvor kan tilførsel af næringsstoffer som nitrat og fosfat komme fra?",
+        "svar": ["Begge de ovenstående"],
+        "forkerte_svar":["Udledning af urenset spildevand", "Udvaskning af gødningsstoffer fra landbruget"]
+    }, {
+        "spm": "Når søen tilføres ekstra nitrat og fosfat, hvad sker der så med antallet af plankton-alger?",
+        "svar": ["Antallet øges, fordi algerne vokser og formerer sig hurtigere"],
+        "forkerte_svar":["Ingen ændring" , "Antallet mindskes, fordi algerne vokser og formerer sig langsommere"]
+    }]
 }
+
+
+

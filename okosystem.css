@@ -1,0 +1,102 @@
+.balance_container {
+    width: 100%;
+    background-color: purple;
+    position: relative;
+    ,
+}
+
+.ubalance_container {
+    width: 100%;
+    background-color: green;
+    position: relative;
+    ,
+}
+
+.gui_container {
+    position: absolute;
+    background-color: wheat;
+    width: 50%;
+    height: 200px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-radius: 0px 0px 4px 0px;
+    padding: 10px;
+    z-index: 1
+}
+
+.exp_container {
+    position: relative;
+}
+
+.gif,
+.detalje_label {
+    position: absolute;
+    max-width: 10%;
+}
+
+.fane {
+    font-size: 20px;
+    color: red;
+}
+
+.nav-tabs>li>a {
+    background-color: #eee;
+    color: #999;
+    cursor: pointer;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.answerChoice input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.rdo_label {
+    cursor: pointer;
+    font-weight: normal;
+    padding: 0px 4px 0px 4px;
+    border-radius: 4px;
+}
+
+.rdo_label:hover {
+    background-color: white;
+}
+
+.info_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    background-color: white;
+    padding: 4px;
+    border-radius: 4px;
+    border: 2px solid #eee;
+}
+
+.info_box {
+    /* position: absolute; */
+    top: -43px;
+    right: 1px;
+    z-index: 100;
+    cursor: pointer;
+    color: brown;
+}
+
+.blur {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.infopic{
+    width:100px;
+}

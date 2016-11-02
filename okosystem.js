@@ -1,200 +1,190 @@
-var active_zoom;
-var active_zoom_slide = 0;
-var tab_index = 0;
-var tab_title = "info";
-var zoomed = false;
+/*============================================
+=            Initialize variables            =
+============================================*/
+var viewArray = [$(".balance_container"), $(".ubalance_container")],
+    /* array der holder div'erne indhold */
+
+    state = 0,
+    /*----------  hvilken tilstand : balance elle ublance?  ----------*/
+
+    state_Array = ["balance_spm", "ubalance_spm"],
+    /*----------  variabler til at tilgå json pba sø state  ----------*/
+
+    svar_array = [],
+
+    /*----------  indeholder korrekte svar  ----------*/
+
+    korrekt_svar;
+
+runder = [0, 0]; /*----------  hvilken runde spørgsmål er vi i?  ----------*/
 
 
-
-var $panzoom = $(".svg_landscape").panzoom({
-    panOnlyWhenZoomed: true,
-    onPan: function() {
-        if (zoomed == false) {
-            $panzoom.panzoom("reset");
-        }
-        console.log("Zoomed: " + zoomed);
-    },
-});
+/*=====  End of Initialize variables  ======*/
 
 
 $(document).ready(function() {
-    $(".svg_landscape").css("-webkit-user-select", "none");
-    $(".zoomedIn_container").fadeOut(0);
-    $(".btn-back").fadeOut(0);
-    $('.btn').button();
-    $('.btn-view-toggle').click(clickedToggle);
-    $('li').click(toogleZoomTab);
+    viewArray[1].fadeOut(0);
+    $('li').click(toggleView);
+    poseQuestion(runder[state]);
 
-    $(".carousel-control").click(clickedCarousel);
-
-
-    detaljer();
-
-    $('.btn_info_gfx').on('click touchstart', function(e) {
-
-        active_zoom = $('.btn_info_gfx').index(this)
-            //        active_zoom = $(this).index("detalje_label");
-        console.log("as: " + active_zoom);
-        if (e.type == 'click') {
-            console.log('Mouse Click');
-            zoomIn(e);
-            console.log('Mouse: ' + touch);
-        } else {
-            var touch = e.originalEvent.touches[0];
-            zoomIn(touch);
-            console.log('Touch: ' + touch);
-        }
+    init(state);
+    $(".gif").click(function() {
+        var indeks = $(this).index(".gif");
+        show_info(indeks);
     });
+    $(".detalje_label").click(function() {
+        var indeks = $(this).index(".detalje_label");
 
-
+        show_info(indeks);
+    });
 });
 
-function init() {
-    console.log(jsonData);
-}
 
-function clickedToggle() {
 
-    var indeks = $(this).index(".btn-view-toggle");
-    $(".btn-view-toggle").removeClass("vuc-primary-active")
-    $(this).addClass("vuc-primary-active");
+/*
+ */
 
-    if (indeks == 0) {
-        $(".png_overlay").remove();
-        $(".svg_landscape").append("<img class='img-responsive png_overlay' src='svg/pile_overlay.png'>");
-        $(".detalje_container").hide();
-    } else if (indeks == 1) {
-        $(".png_overlay").remove();
-        $(".svg_landscape").append("<img class='img-responsive png_overlay' src='svg/sfaerer_overlay.png'>");
-        $(".detalje_container").hide();
-
-        console.log("vis sfærer!");
-    } else if (indeks == 2) {
-        $(".png_overlay").remove();
-        $(".detalje_container").show();
-
-    }
-
-}
-
-function detaljer() {
-    $(".svg_landscape").append("<div class='detalje_container'></div>");
-    for (var i = 0; i < jsonData.zoom_punkter.length; i++) {
-        var zp = jsonData.zoom_punkter[i];
+function init(state) {
+    //console.log(state);
+    for (var i = 0; i < jsonData.elementer.length; i++) {
+        var element = jsonData.elementer[i];
         console.log(i + " punkt");
 
-        $(".detalje_container").append("<span class='btn btn-xs btn-default detalje_label btn_info_gfx'><span class='glyphicon glyphicon-search'> </span> " + jsonData.zoom_punkter[i].header + "</span>");
-        $(".detalje_container").append("<div ><img class='img-responsive gif' src=" + zp.simple_gif + "></div>");
+        viewArray[state].append("<div><img class='gif' src=" + element.pic + "></div>");
+        viewArray[state].append("<span class='btn btn-xs btn-default detalje_label'><span class='glyphicon glyphicon-search'> </span> " + element.element + "</span>");
 
-        $(".detalje_label").eq(i).css("left", zp.label_position[0] + "%").css("top", zp.label_position[1] + "%")
-        $(".gif").eq(i).css("left", zp.simplegif_position[0] + "%").css("top", zp.simplegif_position[1] + "%")
+        $(".detalje_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%")
+        $(".gif").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%");
     }
-}
-
-function toogleZoomTab() {
-    var indeks = $(this).index();
-    tab_index = indeks;
-    console.log("TZT" + tab_index);
-    $(".exp_tekst").slideUp(200, function() {
-        $(".exp_tekst").html(jsonData.zoom_punkter[active_zoom].slides[active_zoom_slide].tab[tab_index].txt);
-        $(".zoom_pic").attr("src", jsonData.zoom_punkter[active_zoom].slides[active_zoom_slide].tab[tab_index].pic)
-        $(".exp_tekst").slideDown(200);
-    });
+    console.log("break");
 }
 
 
-function zoomIn(e) {
+/*----------  vis information  ----------*/
 
-    active_zoom_slide = 0;
+function show_info(indeks) {
+    console.log("I: " + indeks);
+    //$(".container-fluid").append("<div class='info_container'><div class='info_box'><h4>" + jsonData.elementer[indeks].element + "</h4><img class='infopic' src='" + jsonData.elementer[indeks].pic + "'><p>" + jsonData.elementer[indeks].infotekst + "</p></div></div>")
+    UserMsgBox("body", "<h3>" + jsonData.elementer[indeks].element + "</h3><img class='img-responsive' src='" + jsonData.elementer[indeks].pic + "'><p>" + jsonData.elementer[indeks].infotekst + "</p>");
 
-    var zp = jsonData.zoom_punkter[active_zoom];
-    //
-    $panzoom.panzoom('zoom', false, {
-        duration: 20,
-        increment: 1.5,
-        animate: true,
-        focal: e
-    });
+    //viewArray[state].addClass("blur");
+}
 
-    $(".btn-back").fadeIn(1000).click(zoomOut);
+/*----------  Skift view på Søen  ----------*/
 
-    if (jsonData.zoom_punkter[active_zoom].slides.length < 2) {
-    $(".btn_right").hide();
+function toggleView() {
+
+    state = $(this).index();
+
+    for (i in viewArray) {
+        viewArray[i].hide()
     }
+    viewArray[state].show();
 
-    $(".btn_left").hide();
-    zoomed = true;
+    poseQuestion();
+}
+
+/*----------  Kør spørgsmål  ----------*/
+
+function poseQuestion() {
+    console.log("runder: " + runder);
 
 
-    console.log($(".container-fluid").height());
-    $(".zoomedIn_container").css("height", $(".container-fluid").height()).fadeIn();
-    //$(".img_container").css("height", $(".container-fluid").height() * 0.4); //).fadeIn();
-    //$(".zoom_pic").css("height", $(".container-fluid").height() * 0.4); //).fadeIn();
-    $(".zoomTitle").html(zp.header);
-    console.log("ZP: " + zp.overskrift)
-    $(".exp_header").html(zp.overskrift[active_zoom_slide]);
-    console.log(zp.slides[active_zoom_slide].tab[tab_index].pic);
-    $(".zoom_pic").attr("src", zp.slides[active_zoom_slide].tab[tab_index].pic); //.css("height", );
 
-    $(".exp_tekst").html(zp.slides[active_zoom_slide].tab[tab_index].txt);
-    $(".gui_container").fadeOut();
-    $(".btn_info_gfx").fadeOut();
-    //$(".gif").fadeOut(0);
-};
+    var spmData = jsonData[state_Array[state]];
 
-function zoomOut(e) {
-    //$(".gif").fadeIn(200);
-    $(".btn-back").hide();
-    $panzoom.panzoom("reset");
-    zoomed = false;
-    $(".zoomedIn_container").fadeOut();
-    $(".gui_container").fadeIn();
-    $(".btn_info_gfx").fadeIn();
-};
+    if (runder[state] < spmData.length) {
 
-function clickedCarousel() {
+        $(".spm_numbers").html("Spørgsmål " + runder[state] + " / " + spmData.length + ":");
+        $(".spm").html(spmData[runder[state]].spm);
 
-    var carousel_length = jsonData.zoom_punkter[active_zoom].slides.length;
-    var indeks = $(this).index(".carousel-control");
+        svar_Array = [];
+        var svarHTML = "<div class='answerWrap'>";
 
-    if (indeks == 0) {
-        active_zoom_slide--;
-    } else if (indeks == 1) {
-        active_zoom_slide++;
-    }
+        for (var i = 0; i < spmData[runder[state]].forkerte_svar.length; i++) {
+            svar_Array.push(spmData[runder[state]].forkerte_svar[i]);
+        }
+        svar_Array.push(spmData[runder[state]].svar);
 
-    console.log("ass: " + active_zoom_slide + ", " + carousel_length);
+        korrekt_svar = spmData[runder[state]].svar;
+        svar_Array = shuffle_Array(svar_Array);
 
-    $(".zoom_expl").fadeOut(400, function() {
+        for (var i = 0; i < svar_Array.length; i++) {
+            svarHTML += "<div class='answerChoice radioWrap'><label class='rdo_label'><input name='radioName' type='radio' value='" + i + "'><span class='svar_txt'>" + svar_Array[i] + " </span></label></div>"
+        }
 
-        $(".zoom_pic").attr("src", jsonData.zoom_punkter[active_zoom].infotekster[active_zoom_slide][0]);
-        $(".exp_header").html(jsonData.zoom_punkter[active_zoom].infotekster[active_zoom_slide][1]);
-        $(".exp_tekst").html(jsonData.zoom_punkter[active_zoom].infotekster[active_zoom_slide][2 + tab_index]);
-        $(".zoom_expl").show();
+        $(".svar").html("</div>" + svarHTML + "<div class='btn btn-info btn_tjek'>Tjek svar</div>");
 
-        //resize_text_container();
-    });
-
-    if (active_zoom_slide == 0) {
-        $(".btn_left").hide();
-    } else if (active_zoom_slide >= carousel_length - 1) {
-        $(".btn_right").hide();
+        $(".btn_tjek").click(tjek_svar);
     } else {
-        $(".btn_right, .btn_left").show();
+        $(".spm").html("<h3>Du har besvaret alle spørgsmål <span class='label label-success'>korrekt</span>");
+        $(".svar").html("<div class='btn btn-info btn_forfra'>Tag quizzen igen</div>");
+        $(".btn_forfra").click(function() {
+            genstart_quiz();
+        });
     }
+}
+
+/*----------  Tjek svar  ----------*/
+
+
+function tjek_svar() {
+    var checked = $('input[name=radioName]:checked').val();
+    var svar = svar_Array[checked];
+
+    if (korrekt_svar == svar) {
+        console.log("KORREKT")
+
+        feedback(true);
+
+    } else {
+        console.log("FORKERT!");
+        feedback(false);
+    }
+
+    console.log("svar: " + korrekt_svar + ", checked:" + $(".svar_txt").eq(checked).html());
 
 
 }
 
-// Focal zoom:
-function resize_text_container() {
+/*----------  Visuel feedback:    ----------*/
 
-    var div_offset = $(".img_container").height();
-
-    var container_height = $(".container-fluid").height();
-    var remaining_height = container_height - parseInt(div_offset);
-
-    console.log("zoom_pic-height " + div_offset + ", RH: " + remaining_height);
+function visuel_feedback() {
 
 
+
+}
+
+/*----------  feedback - 1 skridt bring skridt 2 op ved click  ----------*/
+
+
+function feedback(svar) {
+    if (state == 0) {
+        if (svar == true) {
+            UserMsgBox("body", "<h3>Du har svaret <span class='label label-success'>korrekt</span></h3><p>Når du klikker videre, så observer hvad der sker med " + jsonData.balance_spm[runder[state]].svar + " på illustrationen.</p>");
+        } else {
+            UserMsgBox("body", "<h3>Du har svaret <span class='label label-danger'>forkert</span></h3>");
+        }
+    } else {
+        if (svar == true) {
+            UserMsgBox("body", "<h3>Du har svaret <span class='label label-success'>korrekt</span></h3>");
+        } else {
+            UserMsgBox("body", "<h3>Du har svaret <span class='label label-danger'>forkert</span></h3>");
+        }
+    }
+
+    $(".MsgBox_bgr").click(function() {
+        if (svar == true) {
+            visuel_feedback();
+            runder.splice(state, 1, runder[state] + 1);
+            poseQuestion();
+        }
+    });
+}
+
+/*----------  Genstart quiz - ryd variabler   ----------*/
+
+function genstart_quiz() {
+    runder.splice(state, 1, 0);
+    poseQuestion();
 }
