@@ -69,18 +69,20 @@
     }, {
         "spm": "Hvilke organismer spiser algerne? (2. trofiske niveau)",
         "svar": ["Dyreplankton"],
-        "forkerte_svar": ["Bundplanter","Rovfisk"]
+        "forkerte_svar": ["Bundplanter", "Rovfisk"]
     }],
     "ubalance_spm": [{
         "spm": "Hvor kan tilførsel af næringsstoffer som nitrat og fosfat komme fra?",
         "svar": ["Begge de ovenstående"],
-        "forkerte_svar":["Udledning af urenset spildevand", "Udvaskning af gødningsstoffer fra landbruget"]
+        "forkerte_svar": ["Udledning af urenset spildevand", "Udvaskning af gødningsstoffer fra landbruget"],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""]
     }, {
         "spm": "Når søen tilføres ekstra nitrat og fosfat, hvad sker der så med antallet af plankton-alger?",
         "svar": ["Antallet øges, fordi algerne vokser og formerer sig hurtigere"],
-        "forkerte_svar":["Ingen ændring" , "Antallet mindskes, fordi algerne vokser og formerer sig langsommere"]
+        "forkerte_svar": ["Ingen ændring", "Antallet mindskes, fordi algerne vokser og formerer sig langsommere"],
+        "konsekvens": ["", ""],
+        "konsekvens_pics": ["", ""]
+
     }]
 }
-
-
-

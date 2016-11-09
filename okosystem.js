@@ -4,8 +4,12 @@
 var viewArray = [$(".balance_container"), $(".ubalance_container")],
     /* array der holder div'erne indhold */
 
-    state = 0,
     /*----------  hvilken tilstand : balance elle ublance?  ----------*/
+    state = 0,
+
+    /*----------  hvor meget ubalance er der?  ----------*/
+    ubalance_niveau = 0,
+
 
     state_Array = ["balance_spm", "ubalance_spm"],
     /*----------  variabler til at tilgå json pba sø state  ----------*/
@@ -14,9 +18,9 @@ var viewArray = [$(".balance_container"), $(".ubalance_container")],
 
     /*----------  indeholder korrekte svar  ----------*/
 
-    korrekt_svar;
+    korrekt_svar,
 
-runder = [0, 0]; /*----------  hvilken runde spørgsmål er vi i?  ----------*/
+    runder = [0, 0]; /*----------  hvilken runde spørgsmål er vi i?  ----------*/
 
 
 /*=====  End of Initialize variables  ======*/
@@ -34,15 +38,10 @@ $(document).ready(function() {
     });
     $(".detalje_label").click(function() {
         var indeks = $(this).index(".detalje_label");
-
         show_info(indeks);
     });
 });
 
-
-
-/*
- */
 
 function init(state) {
     //console.log(state);
@@ -73,29 +72,27 @@ function show_info(indeks) {
 /*----------  Skift view på Søen  ----------*/
 
 function toggleView() {
+    if (state != $(this).index()) {
+        state = $(this).index();
 
-    state = $(this).index();
+        for (i in viewArray) {
+            viewArray[i].fadeOut(0)
+        }
+        viewArray[state].fadeIn(500);
 
-    for (i in viewArray) {
-        viewArray[i].hide()
+        poseQuestion();
     }
-    viewArray[state].show();
-
-    poseQuestion();
 }
 
 /*----------  Kør spørgsmål  ----------*/
 
 function poseQuestion() {
     console.log("runder: " + runder);
-
-
-
     var spmData = jsonData[state_Array[state]];
 
     if (runder[state] < spmData.length) {
 
-        $(".spm_numbers").html("Spørgsmål " + runder[state] + " / " + spmData.length + ":");
+        $(".spm_numbers").html("Spørgsmål " + (runder[state] + 1) + " / " + spmData.length);
         $(".spm").html(spmData[runder[state]].spm);
 
         svar_Array = [];
@@ -161,13 +158,13 @@ function visuel_feedback() {
 function feedback(svar) {
     if (state == 0) {
         if (svar == true) {
-            UserMsgBox("body", "<h3>Du har svaret <span class='label label-success'>korrekt</span></h3><p>Når du klikker videre, så observer hvad der sker med " + jsonData.balance_spm[runder[state]].svar + " på illustrationen.</p>");
+            UserMsgBox("body", "<h3>Du har svaret <span class='label label-success'>korrekt</span></h3>");
         } else {
             UserMsgBox("body", "<h3>Du har svaret <span class='label label-danger'>forkert</span></h3>");
         }
     } else {
         if (svar == true) {
-            UserMsgBox("body", "<h3>Du har svaret <span class='label label-success'>korrekt</span></h3>");
+            UserMsgBox("body", "<h3>Du har svaret <span class='label label-success'>korrekt</span></h3><p>Når du klikker videre, så observer hvad der sker med " + jsonData.balance_spm[runder[state]].svar + " på illustrationen.</p>");
         } else {
             UserMsgBox("body", "<h3>Du har svaret <span class='label label-danger'>forkert</span></h3>");
         }
