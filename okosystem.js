@@ -5,7 +5,7 @@ var viewArray = [$(".balance_container"), $(".ubalance_container")],
     /* array der holder div'erne indhold */
 
     /*----------  hvilken tilstand : balance elle ublance?  ----------*/
-    state = 0,
+    state = 1,
 
     /*----------  hvor meget ubalance er der?  ----------*/
     ubalance_niveau = 0,
@@ -32,6 +32,8 @@ $(document).ready(function() {
     poseQuestion(runder[state]);
 
     init(state);
+
+
     $(".gif").click(function() {
         var indeks = $(this).index(".gif");
         show_info(indeks);
@@ -49,7 +51,7 @@ function init(state) {
         var element = jsonData.elementer[i];
         console.log(i + " punkt");
 
-        viewArray[state].append("<div><img class='gif' src=" + element.pic + "></div>");
+        viewArray[state].append("<div><img class='gif' src=" + element.pics[state] + "></div>");
         viewArray[state].append("<span class='btn btn-xs btn-default detalje_label'><span class='glyphicon glyphicon-search'> </span> " + element.element + "</span>");
 
         $(".detalje_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%")

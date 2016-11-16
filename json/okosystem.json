@@ -5,57 +5,80 @@
         "instruktion_2": "Klik på ikonerne. Vælg for hvert tekststykke om den er i helikopterperspektiv eller zoomet ind.",
         "titel": "Nytårsforsætter"
     },
+    "actionpile": [{
+        "pics": [],
+        "xpositions":[],
+        "ypositions":[]
+    }],
+
+    "energipile": [{}],
+
+
     "elementer": [{
         "element": "Sol",
         "infotekst": "Al energi på jorden stammer fra solen.<br/>Energien fra solen omdannes i planterne gennem fotosyntese. ",
-        "pic": "img/sol.png",
+        "pics": ["img/sol.png"],
         "balance_pos": ["60", "10"],
         "ubalance_pos": ["", ""]
 
     }, {
         "element": "Alger",
         "infotekst": "Planteplankton er små (ofte encellede) organismer, der lever/flyder i vand og som indeholder klorofyl. De kan derfor udføre fotosyntese. Planteplankton kaldes også mikroalger, eller bare alger. De kan både være encellede eller flercellede Nogle alger er prokaryote - altså uden kerne (de kaldes cyanobakterier), andre er eukaryote.",
-        "pic": "img/sol.png",
+        "pics": "",
         "balance_pos": ["12", "37"],
         "ubalance_pos": ["", ""]
 
     }, {
         "element": "Dyreplankton",
         "infotekst": "",
-        "pic": [""],
+        "pics": [""],
         "balance_pos": ["12", "37"],
         "ubalance_pos": ""
 
     }, {
         "element": "Fredfisk",
         "infotekst": "Fredfisk er fisk, der ikke lever af at spise andre fisk, men i stedet lever af smådyr, insekter og plantedele. Eksempler på fredfisk er karpe, skalle og brasen. Brasen kan lave sin mund om til et rør, så den kan “støvsuge” mudder op fra bunden, og på den måde indtage orme, larver, snegle, insekter og muslinger. Brasener har ikke har tænder i munden, så føden knuses i dens svælg.",
-        "pic": "img/fredfisk.png",
+        "pics": ["img/fredfisk.png", ""],
         "balance_pos": ["30", "60"],
         "ubalance_pos": ["", ""]
 
     }, {
         "element": "Rovfisk",
         "infotekst": "",
-        "pic": [""],
+        "pics": ["img/rovfisk.png", ""],
         "balance_pos": ["12", "37"],
         "ubalance_pos": ""
 
     }, {
         "element": "Bundplanter",
         "infotekst": "",
-        "pic": [""],
+        "pics": ["img/fredfisk.png", ""],
         "balance_pos": "",
         "ubalance_pos": ""
 
     }, {
-        "element": "Døde planter og dyr på bunden",
+        "element": "Bunddyr",
+        "infotekst": "",
+        "pics": ["img/fredfisk.png", ""],
+        "balance_pos": "",
+        "ubalance_pos": ""
+
+    }, {
+        "element": "Nedbrydere",
         "infotekst": "",
         "pic": [""],
         "balance_pos": "",
         "ubalance_pos": ""
 
     }, {
-        "element": "Nedbrydere(bunddyr + bakterier)",
+        "element": "Iltmåler",
+        "infotekst": "",
+        "pics": ["img/fredfisk.png", ""],
+        "balance_pos": "",
+        "ubalance_pos": ""
+
+    }, {
+        "element": "Nedbrydere",
         "infotekst": "",
         "pic": [""],
         "balance_pos": "",
