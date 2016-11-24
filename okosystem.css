@@ -1,13 +1,15 @@
 .balance_container {
     width: 100%;
-    background-color: purple;
+    background-color: white;
     position: relative;
+    margin-top: 200px;
 }
 
 .ubalance_container {
     width: 100%;
-    background-color: green;
+    background-color: white;
     position: relative;
+    margin-top: 200px;
 }
 
 .gui_container {

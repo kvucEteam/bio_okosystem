@@ -5,7 +5,7 @@ var viewArray = [$(".balance_container"), $(".ubalance_container")],
     /* array der holder div'erne indhold */
 
     /*----------  hvilken tilstand : balance elle ublance?  ----------*/
-    state = 1,
+    state = 0,
 
     /*----------  hvor meget ubalance er der?  ----------*/
     ubalance_niveau = 0,
@@ -52,6 +52,7 @@ function init(state) {
         console.log(i + " punkt");
 
         viewArray[state].append("<div><img class='gif' src=" + element.pics[state] + "></div>");
+        
         viewArray[state].append("<span class='btn btn-xs btn-default detalje_label'><span class='glyphicon glyphicon-search'> </span> " + element.element + "</span>");
 
         $(".detalje_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%")
