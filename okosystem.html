@@ -14,7 +14,7 @@
     <meta charset="utf-8">
 </head>
 
-<body>dS
+<body>
     <div class="container-fluid">
         <h1>Søen som Økosystem</h1>
         <div class="col-xs-12">
@@ -25,30 +25,39 @@
             <ul class="nav nav-tabs">
                 <li class="active fane"><a data-toggle="tab">Sø i balance</a></li>
                 <li class="fane"><a data-toggle="tab">Sø i ubalance</a></li>
+                <li class="fane"><a data-toggle="tab">Genopretning</a></li>
             </ul>
             <div class="gui_container">
                 <div class="spm_numbers"></div>
                 <div class="spm"></div>
                 <div class="svar"></div>
-                
             </div>
-            <div class="balance_container">
-                <img src="img/BG_soen_som_okosystem.png" class="img-responsive"/>
+            <div class="lake_container">
+                <div class="bg_container">
+                    <img src="img/BG_soen_som_okosystem.png" class="img-responsive" />
+                </div>
+                <div class="labels_container"></div>
+                <div class="png_container">
+                    <div class="balance_container">
+                        <img src="img/gedde3.png" class="img-responsive" />
+                    </div>
+                    <div class="ubalance_container">
+                        <img src="img/gedde2.png" class="img-responsive" />
+                    </div>
+                    <div class="genopretnings_container">
+                        <img src="img/gedde1.png" class="img-responsive" />
+                    </div>
+                </div>
             </div>
-            <div class="ubalance_container">
-                <img src="img/BG_soen_som_okosystem.png" class="img-responsive"/>
-            </div>
-        </div>
-    </div>
-    <script src="../library/vendor_scripts.js"></script>
-    <script src="../library/custom_scripts.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        getAjaxData("GET", "json/okosystem.json", false, "json");
-        one_line_footer();
-    });
-    </script>
-    <script type="text/javascript" src="okosystem.js"></script>
+            <script src="../library/vendor_scripts.js"></script>
+            <script src="../library/custom_scripts.js"></script>
+            <script type="text/javascript">
+            $(document).ready(function() {
+                getAjaxData("GET", "json/okosystem.json", false, "json");
+                one_line_footer();
+            });
+            </script>
+            <script type="text/javascript" src="okosystem.js"></script>
 </body>
 
 </html>

@@ -1,20 +1,16 @@
-.balance_container {
-    width: 100%;
-    background-color: white;
-    position: relative;
-    margin-top: 200px;
+.png_container {
+    position: absolute;
+    top: 0px;
 }
 
-.ubalance_container {
-    width: 100%;
-    background-color: white;
+.lake_container {
     position: relative;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
 .gui_container {
     position: absolute;
-    background-color: rgba(248, 248, 246,.9);
+    background-color: rgba(248, 248, 246, .9);
     width: 50%;
     height: 200px;
     margin-top: 0px;
@@ -31,7 +27,16 @@
 .gif,
 .detalje_label {
     position: absolute;
-    max-width: 10%;
+}
+
+.gif {
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.detalje_label {
+    z-index: 3;
 }
 
 .fane {
@@ -89,14 +94,18 @@
     color: brown;
 }
 
-.blur {
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
+.infopic {
+    width: 100px;
 }
 
-.infopic{
-    width:100px;
+@media all and (max-width: 1170px) {
+    .detalje_label {
+        font-size: 1.3vw;
+    }
+}
+
+@media all and (min-width: 1171px) {
+    .detalje_label {
+        font-size: 14px;
+    }
 }
