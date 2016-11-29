@@ -13,7 +13,7 @@
 
     "energipile": [{}],
 
-    "overlays": [{ "overlaypics": [""] }, { "overlaypics": [""] }, { "overlaypics": [""] }],
+    "overlays": [{ "overlaypics": ["img/gedde1.png"] }, { "overlaypics": ["img/gedde2.png","img/gedde3.png"] }, { "overlaypics": ["img/gedde1.png"] }],
 
 
     "labels": [{

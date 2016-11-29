@@ -1,7 +1,7 @@
 /*============================================
 =            Initialize variables            =
 ============================================*/
-var state = 0,
+var state = 1,
 
     /*----------  hvor meget ubalance er der?  ----------*/
     ubalance_niveau = 0,
@@ -27,11 +27,14 @@ $(document).ready(function() {
     poseQuestion(runder[state]);
 
     generate_labels(state);
+    toggleView();
 
     $(".detalje_label").click(function() {
         var indeks = $(this).index(".detalje_label");
         show_info(indeks);
     });
+
+
 });
 
 /*----------  Subsection comment block  ----------*/
@@ -73,8 +76,15 @@ function show_info(indeks) {
 /*----------  Skift view på Søen  ----------*/
 
 function toggleView() {
-    if (state != $(this).index()) {
-        state = $(this).index();
+
+    var indeks = $(this).index();
+
+    if (indeks == -1){
+        indeks = state;
+    }
+    
+    if (state != indeks) {
+        state = indeks;
 
         for (i in viewArray) {
             viewArray[i].fadeOut(0)
@@ -152,6 +162,13 @@ function tjek_svar() {
 
 function visuel_feedback() {
 
+    $(".ubalance_container").append("<img class='img_overlay' src='" + jsonData.overlays[state].overlaypics[runder[1]] + "'>");
+    $(".ubalance_container").find(".img_overlay").eq(1).fadeOut(0);
+    $(".ubalance_container").find(".img_overlay").eq(1).fadeIn(1000, function(){
+        $(".ubalance_container").find(".img_overlay").eq(0).remove();
+        console.log($(".ubalance_container").find(".img_overlay").length);
+    });
+
 
 
 }
@@ -160,12 +177,15 @@ function visuel_feedback() {
 
 
 function feedback(svar) {
+    /* Hvis vi er i balance mode */
+
     if (state == 0) {
         if (svar == true) {
             UserMsgBox("body", "<h3>Du har svaret <span class='label label-success'>korrekt</span></h3>");
         } else {
             UserMsgBox("body", "<h3>Du har svaret <span class='label label-danger'>forkert</span></h3><p>Klik på de enkelte elementer og lær mere om dem.</p>");
         }
+        /* Hvis vi er i ubalance mode */
     } else {
         if (svar == true) {
             UserMsgBox("body", "<h3>Du har svaret <span class='label label-success'>korrekt</span></h3><p>Når du klikker videre, så observer hvad der sker med " + jsonData.balance_spm[runder[state]].svar + " på illustrationen.</p>");
@@ -176,7 +196,9 @@ function feedback(svar) {
 
     $(".MsgBox_bgr").click(function() {
         if (svar == true) {
-            visuel_feedback();
+            if (state == 1) {
+                visuel_feedback();
+            }
             runder.splice(state, 1, runder[state] + 1);
             poseQuestion();
         }

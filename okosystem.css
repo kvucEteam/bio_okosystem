@@ -109,3 +109,9 @@
         font-size: 14px;
     }
 }
+
+.img_overlay {
+    position: absolute;
+}
+
+
