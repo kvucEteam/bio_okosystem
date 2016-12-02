@@ -1,7 +1,7 @@
 /*============================================
 =            Initialize variables            =
 ============================================*/
-var state = 1,
+var state = 0,
 
     /*----------  hvor meget ubalance er der?  ----------*/
     ubalance_niveau = 0,
@@ -23,6 +23,9 @@ var state = 1,
 
 
 $(document).ready(function() {
+
+         $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));
+        $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
     $('li').click(toggleView);
     poseQuestion(runder[state]);
 
@@ -62,11 +65,11 @@ function show_info(indeks) {
     console.log("I: " + indeks);
     //$(".container-fluid").append("<div class='info_container'><div class='info_box'><h4>" + jsonData.elementer[indeks].element + "</h4><img class='infopic' src='" + jsonData.elementer[indeks].pic + "'><p>" + jsonData.elementer[indeks].infotekst + "</p></div></div>")
     if (state == 0) {
-        UserMsgBox("body", "<h3>" + jsonData.labels[indeks].element + ": Info</h3><img class='img-responsive' src='" + jsonData.labels[indeks].pics[0] + "'><p>" + jsonData.labels[indeks].infotekst + "</p>");
+        UserMsgBox("body", "<h3>" + jsonData.labels[indeks].element + "</h3><img class='img-responsive' src='" + jsonData.labels[indeks].infopic + "'><p>" + jsonData.labels[indeks].infotekst + "</p>");
     } else if (state == 1) {
 
     } else if (state == 2) {
-        UserMsgBox("body", "<h3>" + jsonData.labels[indeks].element + ": Genopretning</h3><div class='embed-responsive embed-responsive-16by9'><iframe class='embed-responsive-item' src='https://www.youtube.com/embed/" + jsonData.labels[indeks].genopretning_url + "?rel=0'></iframe></div>");
+        UserMsgBox("body", "<h3>" + jsonData.labels[indeks].element + "</h3><div class='embed-responsive embed-responsive-16by9'><iframe class='embed-responsive-item' src='https://www.youtube.com/embed/" + jsonData.labels[indeks].genopretning_url + "?rel=0'></iframe></div>");
 
     }
 
