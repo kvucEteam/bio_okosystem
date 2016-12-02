@@ -24,16 +24,21 @@ var state = 0,
 
 $(document).ready(function() {
 
-         $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));
-        $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
+    $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));
+    $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
     $('li').click(toggleView);
     poseQuestion(runder[state]);
 
     generate_labels(state);
     toggleView();
 
-    $(".detalje_label").click(function() {
-        var indeks = $(this).index(".detalje_label");
+    $(".balance_detalje_label").click(function() {
+        var indeks = $(this).index(".balance_detalje_label");
+        show_info(indeks);
+    });
+
+    $(".genopretning_detalje_label").click(function() {
+        var indeks = $(this).index(".genopretning_detalje_label");
         show_info(indeks);
     });
 
@@ -47,12 +52,18 @@ function generate_labels(state) {
     for (var i = 0; i < jsonData.labels.length; i++) {
         var element = jsonData.labels[i];
         console.log(i + " punkt");
-
         //viewArray[state].append("<div><img class='gif' src=" + element.pics[state] + "></div>");
+        $(".balance_labels_container").append("<span class='btn btn-xs btn-default balance_detalje_label'><span class='glyphicon glyphicon-search'> </span> " + element.element + "</span>");
+        $(".balance_detalje_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%")
+            //$(".gif").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%");
+    }
 
-        $(".labels_container").append("<span class='btn btn-xs btn-default detalje_label'><span class='glyphicon glyphicon-search'> </span> " + element.element + "</span>");
-
-        $(".detalje_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%")
+    for (var i = 0; i < jsonData.genopretning_labels.length; i++) {
+        var element = jsonData.genopretning_labels[i];
+        console.log(i + " punkt");
+        //viewArray[state].append("<div><img class='gif' src=" + element.pics[state] + "></div>");
+        $(".genopretning_labels_container").append("<span class='btn btn-xs btn-default genopretning_detalje_label'><span class='glyphicon glyphicon-play'> </span> " + element.element + "</span>");
+        $(".genopretning_detalje_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%")
             //$(".gif").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%");
     }
     console.log("break");
@@ -65,11 +76,13 @@ function show_info(indeks) {
     console.log("I: " + indeks);
     //$(".container-fluid").append("<div class='info_container'><div class='info_box'><h4>" + jsonData.elementer[indeks].element + "</h4><img class='infopic' src='" + jsonData.elementer[indeks].pic + "'><p>" + jsonData.elementer[indeks].infotekst + "</p></div></div>")
     if (state == 0) {
-        UserMsgBox("body", "<h3>" + jsonData.labels[indeks].element + "</h3><img class='img-responsive' src='" + jsonData.labels[indeks].infopic + "'><p>" + jsonData.labels[indeks].infotekst + "</p>");
+        UserMsgBox("body", "<h3>" + jsonData.labels[indeks].element + "</h3><div class='col-xs-2'></div><div class='col-xs-8'><img class='img-responsive' src='" + jsonData.labels[indeks].infopic + "'></div><div class='col-xs-12'><p>" + jsonData.labels[indeks].infotekst + "</p></div>");
+        //UserMsgBox("body", "<h3>" + jsonData.labels[indeks].element + "</h3><div class='col-xs-8'><img class='img-responsive' src='" + jsonData.labels[indeks].infopic + "'><p></div><div class='col-xs-4>'" + jsonData.labels[indeks].infotekst + "</p></div>");
+
     } else if (state == 1) {
 
     } else if (state == 2) {
-        UserMsgBox("body", "<h3>" + jsonData.labels[indeks].element + "</h3><div class='embed-responsive embed-responsive-16by9'><iframe class='embed-responsive-item' src='https://www.youtube.com/embed/" + jsonData.labels[indeks].genopretning_url + "?rel=0'></iframe></div>");
+        UserMsgBox("body", "<h3>" + jsonData.genopretning_labels[indeks].element + "</h3><div class='embed-responsive embed-responsive-16by9'><iframe class='embed-responsive-item' src='https://www.youtube.com/embed/" + jsonData.genopretning_labels[indeks].genopretning_url + "?rel=0'></iframe></div>");
 
     }
 
@@ -82,10 +95,10 @@ function toggleView() {
 
     var indeks = $(this).index();
 
-    if (indeks == -1){
+    if (indeks == -1) {
         indeks = state;
     }
-    
+
     if (state != indeks) {
         state = indeks;
 
@@ -96,12 +109,24 @@ function toggleView() {
 
         poseQuestion();
     }
+    if (state == 0) {
+        $(".genopretning_labels_container").hide();
+        $(".balance_labels_container, .gui_container").show();
+    } else if (state == 1) {
+        $(".balance_labels_container, .genopretning_labels_container").hide();
+        $(".gui_container").show();
+    } else if (state == 2){
+        $(".balance_labels_container, .gui_container").hide();
+        $(".genopretning_labels_container").show();
+    }
 }
 
 /*----------  Kør spørgsmål  ----------*/
 
 function poseQuestion() {
-    console.log("runder: " + runder);
+    $(".feedback_container").hide();
+    $(".btn_tjek").show();
+        console.log("runder: " + runder);
     var spmData = jsonData[state_Array[state]];
 
     if (state != 2) {
@@ -126,7 +151,7 @@ function poseQuestion() {
                 svarHTML += "<div class='answerChoice radioWrap'><label class='rdo_label'><input name='radioName' type='radio' value='" + i + "'><span class='svar_txt'>" + svar_Array[i] + " </span></label></div>"
             }
 
-            $(".svar").html("</div>" + svarHTML + "<div class='btn btn-info btn_tjek'>Tjek svar</div>");
+            $(".svar").html("</div>" + svarHTML);
 
             $(".btn_tjek").click(tjek_svar);
         } else {
@@ -165,9 +190,11 @@ function tjek_svar() {
 
 function visuel_feedback() {
 
-    $(".ubalance_container").append("<img class='img_overlay' src='" + jsonData.overlays[state].overlaypics[runder[1]] + "'>");
+    $(".ubalance_container").append("<img class='img_overlay img-responsive' src='" + jsonData.overlays[state].overlaypics[runder[1]] + "'>");
     $(".ubalance_container").find(".img_overlay").eq(1).fadeOut(0);
-    $(".ubalance_container").find(".img_overlay").eq(1).fadeIn(1000, function(){
+    $(".ubalance_container").find(".img_overlay").eq(1).fadeIn(0);
+
+    $(".ubalance_container").find(".img_overlay").eq(0).fadeOut(0, function() {
         $(".ubalance_container").find(".img_overlay").eq(0).remove();
         console.log($(".ubalance_container").find(".img_overlay").length);
     });
@@ -180,24 +207,28 @@ function visuel_feedback() {
 
 
 function feedback(svar) {
+    $(".feedback_container").show();
     /* Hvis vi er i balance mode */
 
     if (state == 0) {
         if (svar == true) {
-            UserMsgBox("body", "<h3>Du har svaret <span class='label label-success'>korrekt</span></h3>");
+            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p>"+jsonData.balance_spm[runder[state]].feedback_true+"</p><div class='btn btn-primary ok_btn'>Fortsæt</div>");
+            $(".btn_tjek").hide();
         } else {
-            UserMsgBox("body", "<h3>Du har svaret <span class='label label-danger'>forkert</span></h3><p>Klik på de enkelte elementer og lær mere om dem.</p>");
+            $(".feedback_container").html("<h4><span class='label label-danger'>Forkert</span></h4><p>Klik på de enkelte elementer og læs om dem.</p>");
         }
         /* Hvis vi er i ubalance mode */
-    } else {
+    } else if (state == 1){
         if (svar == true) {
-            UserMsgBox("body", "<h3>Du har svaret <span class='label label-success'>korrekt</span></h3><p>Når du klikker videre, så observer hvad der sker med " + jsonData.balance_spm[runder[state]].svar + " på illustrationen.</p>");
+            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p>Klik på fortsæt og se hvad der sker i visualiseringen</p><div class='btn btn-primary ok_btn'>Fortsæt</div>");
+            $(".btn_tjek").hide();
         } else {
-            UserMsgBox("body", "<h3>Du har svaret <span class='label label-danger'>forkert</span></h3>");
+            alert(jsonData.ubalance_spm[runder[state]].feedback);
+             $(".feedback_container").html("<h4><span class='label label-danger'>Forkert</span></h4><p>"+jsonData.ubalance_spm[runder[state]].feedback+"</p>");
         }
     }
 
-    $(".MsgBox_bgr").click(function() {
+    $(".ok_btn").click(function() {
         if (svar == true) {
             if (state == 1) {
                 visuel_feedback();

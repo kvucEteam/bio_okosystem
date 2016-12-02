@@ -5,19 +5,24 @@
 
 .lake_container {
     position: relative;
-    margin-top: 150px;
+    margin-top: 0px;
+    background-color: white;
+}
+
+.balance_labels_container{
+    z-index:200;
 }
 
 .gui_container {
     position: absolute;
-    background-color: rgba(248, 248, 246, .9);
-    width: 50%;
-    height: 200px;
+    background-color: rgba(248, 248, 246, 0.8);
+    width: 20%;
+    /* height: 240px; */
     margin-top: 0px;
     margin-left: 0px;
     border-radius: 0px 0px 4px 0px;
     padding: 10px;
-    z-index: 1
+    z-index: 1;
 }
 
 .exp_container {
@@ -25,8 +30,10 @@
 }
 
 .gif,
-.detalje_label {
+.balance_detalje_label,
+.genopretning_detalje_label {
     position: absolute;
+    z-index: 10;
 }
 
 .gif {
@@ -110,8 +117,19 @@
     }
 }
 
-.img_overlay {
+/*.img_overlay {
     position: absolute;
+}*/
+
+.spm {
+    margin: 10px 10px 10px 0px;
+    font-weight: bold;
+    font-size: 14px
 }
 
+.spm_numbers{font-size: 10px;color: #666;margin-bottom: -5px;}
 
+.btn_tjek, .ok_btn{
+    margin-top:20px;
+    float:right;
+}
