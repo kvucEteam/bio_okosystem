@@ -152,7 +152,7 @@ function toggleView() {
 /*----------  Kør spørgsmål  ----------*/
 
 function poseQuestion() {
-    $(".gui_container").fadeIn(500);
+    $(".gui_container").fadeIn(1500);
 
     console.log("posing q");
     $(".feedback_container").hide();
@@ -187,8 +187,8 @@ function poseQuestion() {
 
             $(".btn_tjek").click(tjek_svar);
         } else {
-            $(".spm").html("<h4>Tillykke!</h4>Du har besvaret alle spørgsmålene i quizzen <h4><span class='label_slut label label-success'>Korrekt</span></h4><p>Du kan tage quizzen igen eller undersøge en af de andre faner.");
-            $(".svar").html("<div class='btn btn-info btn_forfra'>Tag quizzen igen</div>");
+            $(".spm").html("Du har besvaret alle spørgsmålene i quizzen <h4><span class='label_slut label label-success'>Korrekt</span></h4><p>Du kan tage quizzen igen eller undersøge en af de andre faner.");
+            $(".svar").html("<div class='btn btn-primary btn_forfra'>Tag quizzen igen</div><div class='Clear'></div>");
             $(".btn_tjek").hide();
             $(".btn_forfra").click(function() {
                 genstart_quiz();
@@ -243,7 +243,7 @@ function visuel_feedback() {
             $(".balance_overlay").eq(1).fadeOut(3000);
 
 
-            $(".balance_overlay").eq(0).fadeIn(1500, function() {
+            $(".balance_overlay").eq(0).fadeIn(3000, function() {
                 $(".balance_overlay").eq(1).remove();
 
                 console.log($(".balance_container").find(".img_overlay").length);
@@ -263,8 +263,8 @@ function visuel_feedback() {
         $(".ubalance_overlay").eq(0).fadeOut(0);
         $(".ubalance_overlay").eq(1).fadeOut(3000);
 
-        $(".ubalance_overlay").eq(0).fadeIn(1500, function() {
-            $(".ubalance_overlay").eq(1).remove();
+        $(".ubalance_overlay").eq(0).fadeIn(3000, function() {
+            //$(".ubalance_overlay").eq(1).remove();
 
             console.log($(".ubalance_container").find(".img_overlay").length);
             runder.splice(state, 1, runder[state] + 1);
