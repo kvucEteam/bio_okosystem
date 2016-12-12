@@ -84,7 +84,7 @@
     }, {
         "element": "Iltniveau",
         "infotekst": "Vandets iltindhold er en balance mellem ilt produceret ved fotosyntese, ilt forbrugt ved respiration og tilførsel af ilt fra atmosfæren. Man kan måle vandets iltindhold med en elektrode. Iltniveauet kan svinge fra 0 mg/L til over 20 mg/L henover et år. Der er også døgnudsving, da planterne jo kun producerer ilt ved fotosyntese i dagslys, imens alle organismer i søen respirerer hele døgnet. Så længe niveauet er over ca. 8 mg/L har de fleste fisk og smådyr ingen problemer med at trække vejret, og hvis niveauet kommer under ca. 4 mg/L har de fleste vandlevende dyr problemer med at få ilt nok.",
-        "infopic": "",
+        "infopic": "img/images_usmsgbx/info_ilt.jpg",
         "balance_pos": ["87", "70"],
         "ubalance_pos": ""
 
