@@ -1,8 +1,8 @@
 {
     "userInterface": {
         "header": "Søen som økosystem",
-        "instruktion": "Gå på opdagelse i søens forskellige stadier og besvar de spørgsmål der hører til hvert af stadierne.",
-        "explanation": "Du skal lære om fødekæder i søen, hvordan øgede nitrat og fosfat mængder påvirker søens balance, og hvad man kan gøre for at forsøge at genetablere en sø i ubalance.",
+        "instruktion": "Gå på opdagelse i søens økosystem.",
+        "explanation": "I fanebladet “Søen i balance” kan du lære om økosystemet i en klar og næringsfattig sø.  I fanebladet “Søen i ubalance” kan du lære om hvordan øgede mængder af nitrat og fosfat påvirker søens økosystem.  I fanebladet “Genopretning” kan du lære om hvad man kan gøre for at genetablere balance i søens økosystem.",
         "titel": "Nytårsforsætter"
     },
     "actionpile": [{
@@ -13,28 +13,28 @@
 
     "energipile": [{}],
 
-    "overlays": [{ "overlaypics": ["img/gedde1.png"] }, { "overlaypics": ["img/Ubalance01.png", "img/Ubalance02.png", "img/Ubalance03.png", "img/Ubalance04.png", "img/Ubalance05.png", "img/Ubalance06.png", "img/Ubalance07.png", "img/Ubalance08.png", "img/Ubalance09.png"] }, { "overlaypics": ["img/gedde1.png"] }],
+    "overlays": [{ "overlaypics": ["img/balance02.png","img/balance03.png","img/balance04.png","img/balance05.png"] }, { "overlaypics": ["img/Ubalance02.png", "img/Ubalance03.png", "img/Ubalance04.png", "img/Ubalance05.png", "img/Ubalance06.png", "img/Ubalance07.png", "img/Ubalance08.png", "img/Ubalance09.png", "img/Ubalance10.png"] }, { "overlaypics": ["img/gedde1.png"] }],
 
 
     "labels": [{
         "element": "Sol",
         "infotekst": "Al energi på jorden stammer fra solen.<br/>Energien fra solen omdannes i planterne gennem fotosyntese. ",
         "infopic": "img/images_usmsgbx/info_usol.jpg",
-        "balance_pos": ["64", "2"],
+        "balance_pos": ["70", "6"],
         "ubalance_pos": ["", ""]
 
     }, {
         "element": "Nitrat og fosfat",
         "infotekst": "I en sø i balance er indholdet af næringssalte som nitrat (NO3-) og fosfat (PO43-) forholdsvis lavt. Der kan tilføres ekstra nitrat fra landbruget, når markerne gødes. Den nitrat planterne ikke kan nå at optage udvaskes fra markerne og ender i søer og åer. Fosfat tilføres også fra landbruget, men ca. halvdelen af den fosfat man finder i søer kommer fra industri og husholdninger.",
         "infopic": "img/images_usmsgbx/info_phosphater.jpg",
-        "balance_pos": ["83", "52"],
+        "balance_pos": ["74.5", "43"],
         "ubalance_pos": ""
 
     }, {
         "element": "Planteplankton",
-        "infotekst": "Planteplankton er små organismer, der lever/flyder i vand og som indeholder klorofyl. De kan derfor udføre fotosyntese (6CO<sub>2</sub> + 6h<sub>2</sub>O --> C6h<sub>12</sub>O<sub>6</sub>+ 6O<sub>2</sub>). Da de får energi fra solen, udgør de første led i en fødekæde, også kaldet det første trofiske niveau. Det vil sige at de ikke er afhængige af at spise andre organismer, men kan nøjes med at indtage uorganiske næringsstoffer. De er derfor autotrofe. Planteplankton kaldes også mikroalger. De kan være encellede eller flercellede. Nogle planteplankton er prokaryote, altså uden kerne. De kaldes cyanobakterier. Andre er eukaryote.",
+        "infotekst": "Planteplankton er små organismer, der lever/flyder i vand og som indeholder klorofyl. De kan derfor udføre fotosyntese (6CO<sub>2</sub> + 6h<sub>2</sub>O --> C<sub>6</sub>h<sub>12</sub>O<sub>6</sub>+ 6O<sub>2</sub>). Da de får energi fra solen, udgør de første led i en fødekæde, også kaldet det første trofiske niveau. Det vil sige at de ikke er afhængige af at spise andre organismer, men kan nøjes med at indtage uorganiske næringsstoffer. De er derfor autotrofe. Planteplankton kaldes også mikroalger. De kan være encellede eller flercellede. Nogle planteplankton er prokaryote, altså uden kerne. De kaldes cyanobakterier. Andre er eukaryote.",
         "infopic": "img/images_usmsgbx/info_alger.jpg",
-        "balance_pos": ["26", "27"],
+        "balance_pos": ["32", "21"],
         "ubalance_pos": ["", ""]
 
     }, {
@@ -48,7 +48,7 @@
         "element": "Fredfisk",
         "infotekst": "Fredfisk er fisk, der ikke lever af at spise andre fisk, men i stedet lever af smådyr, dyreplankton og plantedele. Dyr som spiser planteædere udgør tredje led i en fødekæde, også kaldet tredje trofiske niveau. Eksempler på fredfisk er karpe, skalle og brasen. Brasen kan lave sin mund om til et rør, så den kan “støvsuge” mudder op fra bunden, og på den måde indtage orme, larver, snegle, insekter og muslinger. En brasen har ikke tænder i munden, så føden knuses i dens svælg.",
         "infopic": "img/images_usmsgbx/info_fredfisk.jpg",
-        "balance_pos": ["43", "47"],
+        "balance_pos": ["41", "62.5"],
         "ubalance_pos": ["", ""],
         "genopretning_url": "7n5DPmllIck"
 
@@ -56,7 +56,7 @@
         "element": "Rovfisk",
         "infotekst": "Rovfisk er fisk der lever af at spise andre fisk. De udgør fjerde led i en fødekæde, også kaldet fjerde trofiske niveau. Eksempler på rovfisk er gedde, aborre og ørred. Gedden har mange sylespidse tænder, som vender bagud. Derfor kan den ikke give slip på sit bytte, hvis den først har bidt sig fast.",
         "infopic": "img/images_usmsgbx/info_rovfisk.jpg",
-        "balance_pos": ["41", "79"],
+        "balance_pos": ["66", "68"],
         "ubalance_pos": "",
         "genopretning_url": "7n5DPmllIck"
 
@@ -64,146 +64,169 @@
         "element": "Bundplanter",
         "infotekst": "Bundplanter har klorofyl og kan foretage fotosyntese ligesom planteplankton, men sidder fast på bunden. Et eksempel på en bundplante er vandpest, som er en almindelig akvarieplante i Danmark",
         "infopic": "img/images_usmsgbx/info_bundplanter.jpg",
-        "balance_pos": ["63", "92"],
+        "balance_pos": ["9", "79"],
         "ubalance_pos": ""
 
     }, {
         "element": "Bunddyr og bakterier",
-        "infotekst": "På søens bund findes mange forskellige dyr, f.eks. muslinger, snegle, krebsdyr, og larver af en lang række forskellige insekter (slørvinger, vårfluer, biller, m.m.). Nogle af bunddyrene spiser levende alger, smådyr og bakterier, mens andre lever af døde dyr og planter og derfor hører til nedbryder-fødekæden. I søbunden findes også en stor mængde forskellige bakterier, som lever af at nedbryde organisk materiale fra de døde dyr og planter og fra dyrenes afføring. Disse bakterier sørger for at næringsstoffer som nitrat og fosfat frigives til vandet, så de kan genbruges af alger og bundplanter. Meget af nedbrydningen foregår ved respiration (C6h<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6h<sub>2</sub>O), og den bruger altså ilt.",
+        "infotekst": "På søens bund findes mange forskellige dyr, f.eks. muslinger, snegle, krebsdyr, og larver af en lang række forskellige insekter (slørvinger, vårfluer, biller, m.m.). Nogle af bunddyrene spiser levende alger, smådyr og bakterier, mens andre lever af døde dyr og planter og derfor hører til nedbryder-fødekæden. I søbunden findes også en stor mængde forskellige bakterier, som lever af at nedbryde organisk materiale fra de døde dyr og planter og fra dyrenes afføring. Disse bakterier sørger for at næringsstoffer som nitrat og fosfat frigives til vandet, så de kan genbruges af alger og bundplanter. Meget af nedbrydningen foregår ved respiration (C<sub>6</sub>h<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6h<sub>2</sub>O), og den bruger altså ilt.",
         "infopic": "img/images_usmsgbx/info_bunddyr.jpg",
-        "balance_pos": ["12", "94"],
+        "balance_pos": ["35", "88"],
         "ubalance_pos": ""
 
     }, {
         "element": "Døde planter og dyr",
-        "infotekst": "Døde planter og dyr synker ned på søens bund. Her bliver de spist og nedbrudt af bunddyr og af bakterier. Meget af nedbrydningen foregår ved respiration (C6h<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6h<sub>2</sub>O) og bruger derfor ilt. Men hvis der er for mange døde organismer, bruges ilten op, og de døde organismer bliver liggende som et slamlag. Specielle bakterier kan nedbryde organisk stof uden ilt, men de producerer ofte den giftige gas hydrogensulfid (“svovlbrinte”) som affaldsprodukt, og det kan slå fiskene i søen ihjel.",
+        "infotekst": "Døde planter og dyr synker ned på søens bund. Her bliver de spist og nedbrudt af bunddyr og af bakterier. Meget af nedbrydningen foregår ved respiration (C<sub>6</sub>h<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6h<sub>2</sub>O) og bruger derfor ilt. Men hvis der er for mange døde organismer, bruges ilten op, og de døde organismer bliver liggende som et slamlag. Specielle bakterier kan nedbryde organisk stof uden ilt, men de producerer ofte den giftige gas hydrogensulfid (“svovlbrinte”) som affaldsprodukt, og det kan slå fiskene i søen ihjel.",
         "infopic": "img/images_usmsgbx/info_deadplants.jpg",
-        "balance_pos": ["17", "87"],
+        "balance_pos": ["62", "93"],
         "ubalance_pos": ""
 
     }, {
-        "element": "Ilt-elektrode",
+        "element": "Iltniveau",
         "infotekst": "Vandets iltindhold er en balance mellem ilt produceret ved fotosyntese, ilt forbrugt ved respiration og tilførsel af ilt fra atmosfæren. Man kan måle vandets iltindhold med en elektrode. Iltniveauet kan svinge fra 0 mg/L til over 20 mg/L henover et år. Der er også døgnudsving, da planterne jo kun producerer ilt ved fotosyntese i dagslys, imens alle organismer i søen respirerer hele døgnet. Så længe niveauet er over ca. 8 mg/L har de fleste fisk og smådyr ingen problemer med at trække vejret, og hvis niveauet kommer under ca. 4 mg/L har de fleste vandlevende dyr problemer med at få ilt nok.",
         "infopic": "",
-        "balance_pos": ["88", "30"],
+        "balance_pos": ["87", "70"],
         "ubalance_pos": ""
 
     }],
     "genopretning_labels": [{
-        "element": "Rovfisk",
-        "balance_pos": ["41", "79"],
+        "element": "Introduktion",
+        "balance_pos": ["45", "19"],
         "ubalance_pos": "",
-        "genopretning_url": "7n5DPmllIck"
+        "genopretning_url": "sfw1AeinNUE"
+    },{
+        "element": "Rovfisk",
+        "balance_pos": ["75", "78"],
+        "ubalance_pos": "",
+        "genopretning_url": "U7yAQXhYrxk"
     }, {
         "element": "Fredfisk",
-        "balance_pos": ["43", "47"],
+        "balance_pos": ["52", "53"],
         "ubalance_pos": "",
-        "genopretning_url": "7n5DPmllIck"
-    },{
-        "element": "Udledning",
-        "balance_pos": ["85", "9"],
+        "genopretning_url": "o3b_Dp4VhF4"
+    }, {
+        "element": "Udledning af spildevand",
+        "balance_pos": ["78", "9"],
         "ubalance_pos": "",
-        "genopretning_url": "7n5DPmllIck"
-    },{
-        "element": "Iltmåler",
-        "balance_pos": ["88", "30"],
+        "genopretning_url": "0j4cHjlqGuw"
+    }, {
+        "element": "Fosfat",
+        "balance_pos": ["86", "34"],
         "ubalance_pos": "",
-        "genopretning_url": "7n5DPmllIck"
-    },{
-        "element": "Slam",
-        "balance_pos": ["17", "87"],
+        "genopretning_url": "ZNME0y2Dvvk"
+    }, {
+        "element": "Ilttilførsel",
+        "balance_pos": ["87", "70"],
         "ubalance_pos": "",
-        "genopretning_url": "7n5DPmllIck"
+        "genopretning_url": "ehoLh6WOBRQ"
+    }, {
+        "element": "Sediment",
+        "balance_pos": ["45", "88"],
+        "ubalance_pos": "",
+        "genopretning_url": "1V-DKm23gX0"
     }],
     "balance_spm": [{
         "spm": "Hvad er det første led i søens græsningsfødekæde (1. trofiske niveau)",
-        "svar": "Alger og bundplanter",
-        "forkerte_svar": ["Fredfisk", "Dyreplankton"],
-        "feedback_true": "Både bundplanter og planteplankton kan udføre fotosyntese, og er derfor første trofiske niveau i fødekæden."
+        "svar": "Planteplankton og bundplanter",
+        "forkerte_svar": ["Planteplankton", "Dyreplankton"],
+        "feedback_true": "Både bundplanter og planteplankton kan udføre fotosyntese, og er derfor første trofiske niveau i fødekæden.",
+        "feedback_false": ["", ""]
     }, {
-        "spm": "Hvilke organismer spiser algerne? (2. trofiske niveau)",
+        "spm": "Hvilke organismer bliver planteplankton spist af (2. trofiske niveau)",
         "svar": ["Dyreplankton"],
         "forkerte_svar": ["Bundplanter", "Rovfisk"],
-        "feedback_true": "Dyreplankton spiser planteplankton, og er derfor andet trofiske niveau i fødekæden."
+        "feedback_true": "Dyreplankton spiser planteplankton, og er derfor andet trofiske niveau i fødekæden.",
+        "feedback_false": ["", ""]
     }, {
-        "spm": "Hvilke  organismer bliver dyreplankton spist af (3. trofiske niveau)",
+        "spm": "Hvilke  organismer bliver dyreplankton spist af (3. trofiske niveau) ",
         "svar": "Fredfisk",
         "forkerte_svar": ["Rovfisk", "Planteplankton"],
-        "feedback_true": "Fredfisk  spiser dyreplankton som spiser planteplankton, og er derfor tredje trofiske niveau i fødekæden."
+        "feedback_true": "Fredfisk  spiser dyreplankton som spiser planteplankton, og er derfor tredje trofiske niveau i fødekæden.",
+        "feedback_false": ["", ""]
     }, {
         "spm": "Hvilke  organismer bliver fredfisk spist af (4. trofiske niveau)?",
         "svar": "Rovfisk",
-        "forkerte_svar": ["Andre Fredfisk", "Planteplankton og dyreplankton"],
-        "feedback_true": "Rovfisk spiser fredfisk, som  spiser dyreplankton som spiser planteplankton, og er derfor fjerde trofiske niveau i fødekæden."
+        "forkerte_svar": ["Andre fredfisk", "Planteplankton og dyreplankton"],
+        "feedback_true": "Rovfisk spiser fredfisk, som  spiser dyreplankton som spiser planteplankton, og er derfor fjerde trofiske niveau i fødekæden.",
+        "feedback_false": ["", ""]
     }, {
         "spm": "Når dyr og planter dør, falder de til bunds og bliver nedbrudt, så de næringsstoffer de består af kan genbruges. Hvilke organismer fungerer som nedbrydere?",
         "svar": "Bunddyr og bakterier",
         "forkerte_svar": ["Fredfisk", "Dyreplankton"],
-        "feedback_true": "Bakterier og mange bunddyr lever af dødt organisk materiale, og kaldes derfor “nedbrydere”"
+        "feedback_true": "Bakterier og mange bunddyr lever af dødt organisk materiale, og kaldes derfor “nedbrydere”.",
+        "feedback_false": ["", ""]
     }, {
         "spm": "Hvilke organismer udfører fotosyntese?",
         "svar": "Bundplanter og planteplankton",
         "forkerte_svar": ["Dyreplankton", "Bundplanter"],
-        "feedback_true": "Både bundplanter og planteplankton kan udføre fotosyntese, og er derfor første trofiske niveau i fødekæden."
+        "feedback_true": "Både bundplanter og planteplankton kan udføre fotosyntese, og er derfor første trofiske niveau i fødekæden.",
+        "feedback_false": ["Klik på de enkelte elementer og læs om dem", "Bundplanter er ikke de eneste organismer i søen, som kan udføre fotosyntese"]
     }, {
         "spm": "Udpeg fotosyntese-reaktionen",
-        "svar": "6CO2 + 6H2O → C6H12O6 + 6O2",
-        "forkerte_svar": ["C6H12O6 →  2CH3CH2OH + 2CO2", "C6H12O6 + 6O2  → 6CO2 + 6H2O"],
-        "feedback_true": "Både bundplanter og planteplankton kan udføre fotosyntese, og er derfor første trofiske niveau i fødekæden."
+        "svar": "6CO<sub>2</sub> + 6H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>",
+        "forkerte_svar": ["C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> →  2CH<sub>3</sub>CH<sub>2</sub>OH + 2CO<sub>2</sub>", "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6H<sub>2</sub>O"],
+        "feedback_true": "Både bundplanter og planteplankton kan udføre fotosyntese, og er derfor første trofiske niveau i fødekæden.",
+        "feedback_false": ["Dette reaktionsskema viser en gæringsreaktion, hvor glukose omdannes til ethanol og kuldioxid.", "Det er forkert. Dette reaktionsskema viser respiration, hvor glukose under forbrug af ilt nedbrydes til kuldioxid og vand."]
     }, {
         "spm": "Hvilke organismer udfører respiration?",
         "svar": "Alle levende organismer",
         "forkerte_svar": ["Dyreplankton og bundplanter", "Dyreplankton, fredfisk og rovfisk"],
-        "feedback_true": "Alle levende organismer udfører respiration"
+        "feedback_true": "Alle levende organismer udfører respiration",
+        "feedback_false": ["Planteplankton og bundplanter er ikke de eneste som udfører respiration", "Dyreplankton, fredfisk og rovfisk er ikke de eneste som udfører respiration"]
     }, {
         "spm": "Udpeg respirations-reaktionen",
-        "svar": "C6H12O6 + 6O2  → 6CO2 + 6H2O",
-        "forkerte_svar": ["C6H12O6 + O2  → CO2 + H2O", "6CO2 + 6H2O → C6H12O6 + 6O2"],
-        "feedback_true": "Dette reaktionsskema viser respiration, hvor glukose under forbrug af ilt nedbrydes til kuldioxid og vand."
+        "svar": "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6H<sub>2</sub>O",
+        "forkerte_svar": ["C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + O<sub>2</sub>  → CO<sub>2</sub> + H<sub>2</sub>O", "6CO<sub>2</sub> + 6H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>"],
+        "feedback_true": "Dette reaktionsskema viser respiration, hvor glukose under forbrug af ilt nedbrydes til kuldioxid og vand.",
+        "feedback_false": ["Dette reaktionsskema viser elementerne i respiration, men reaktionen er ikke rigtigt afstemt.", "Dette reaktionsskema viser fotosyntesen, hvor kuldioxid og vand omdannes til glukose og ilt ved hjælp af solenergi"]
     }, {
         "spm": "Hvad er kilden til al energi i fødekæden?",
         "svar": "Solen",
         "forkerte_svar": ["Nitrat og fosfat", "Ilt"],
-        "feedback_true": "Solenergi omdannes til kemisk energi ved fotosyntese, og bringes på den måde videre ned gennem fødekæderne."
+        "feedback_true": "Solenergi omdannes til kemisk energi ved fotosyntese, og bringes på den måde videre ned gennem fødekæderne.",
+        "feedback_false": ["", ""]
     }],
     "ubalance_spm": [{
         "spm": "Hvor kan tilførsel af næringsstoffer som nitrat og fosfat komme fra?",
-        "svar": ["Begge de ovenstående"],
+        "svar": ["Både fra spildevand og fra landbruget"],
         "forkerte_svar": ["Udledning af urenset spildevand", "Udvaskning af gødningsstoffer fra landbruget"],
         "konsekvens": ["", ""],
+
         "konsekvens_pics": ["", ""],
-        "feedback": "Der er flere kilder til udledning af næringssalte"
+        "feedback": "Der er flere kilder til udledning af næringssalte",
+        "feedback_false": ["Der er flere kilder til udledning af næringssalte.", "Der er flere kilder til udledning af næringssalte."]
     }, {
-        "spm": "Når søen tilføres ekstra nitrat og fosfat, hvad sker der så med antallet af plankton-alger?",
-        "svar": ["Antallet øges, fordi algerne vokser og formerer sig hurtigere"],
-        "forkerte_svar": ["Ingen ændring", "Antallet mindskes, fordi algerne vokser og formerer sig langsommere"],
+        "spm": "Når søen tilføres ekstra nitrat og fosfat, hvad sker der så med mængden af planteplankton?",
+        "svar": ["Mængden øges, fordi algerne vokser og formerer sig hurtigere"],
+        "forkerte_svar": ["Ingen ændring", "Mængden mindskes, fordi algerne vokser og formerer sig langsommere"],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": ""
-
+        "feedback": "",
+        "feedback_false": ["Gå på opdagelse i Søen i balance.", "Gå på opdagelse i Søen i balance."]
     }, {
         "spm": "Hvad betyder den store mængde planteplankton for antallet af fredfisk i søen?",
         "svar": ["Der bliver flere fredfisk, fordi rovfiskene ikke kan se og fange dem i det planteplankton-grumsede vand."],
         "forkerte_svar": ["Ingen ændring", "Der bliver færre fredfisk, fordi de foræder sig i den store mængde planteplankton"],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Antallet af fredfisk holdes normalt nede af rovfiskene, men rovfiskene har svært ved at jage når vandet bliver uklart af planteplankton."
-
+        "feedback": "Antallet af fredfisk holdes normalt nede af rovfiskene, men rovfiskene har svært ved at jage når vandet bliver uklart af planteplankton.",
+        "feedback_false": ["Antallet af fredfisk holdes normalt nede af rovfiskene, men rovfiskene har svært ved at jage når vandet bliver uklart af planteplankton.", "Antallet af fredfisk holdes normalt nede af rovfiskene, men rovfiskene har svært ved at jage når vandet bliver uklart af planteplankton."]
     }, {
         "spm": "Hvad betyder de mange fredfisk for mængden af dyreplankton i søen?",
         "svar": ["Der bliver mindre dyreplankton, fordi fredfiskene æder dem"],
         "forkerte_svar": ["Der bliver mere dyreplankton, fordi rovfiskene ikke kan se og fange dem", "Der bliver mere dyreplankton, fordi de formerer sig hurtigere"],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Når der er så mange fredfisk vil de æde det meste dyreplankton, også selvom dyreplankton formerer sig hurtigt når der er meget planteplankton."
+        "feedback": "Når der er så mange fredfisk vil de æde det meste dyreplankton, også selvom dyreplankton formerer sig hurtigt når der er meget planteplankton.",
+        "feedback_false": ["Gå på opdagelse i Søen i balance.", "Når der er så mange fredfisk vil de æde det meste dyreplankton, også selvom dyreplankton formerer sig hurtigt når der er meget planteplankton."]
     }, {
         "spm": "Hvad betyder den mindre mængde dyreplankton for mængden af planteplankton?",
         "svar": ["Mængden af planteplankton stiger endnu mere, fordi de ikke bliver ædt"],
-        "forkerte_svar": ["Ingen ændring", "Mængden af planteplankton falder, fordi der ikke er så meget dyreplankton der respirerer og producerer CO2"],
+        "forkerte_svar": ["Mængden af planteplankton falder, fordi der ikke er så meget dyreplankton der respirerer og producerer CO<sub>2</sub>","Ingen ændring"],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Der er rigeligt CO2 i vandet. Men når der er mindre dyreplankton bliver der ikke ædt så meget planteplankton."
-
+        "feedback": "Der er rigeligt CO<sub>2</sub> i vandet. Men når der er mindre dyreplankton bliver der ikke ædt så meget planteplankton.",
+        "feedback_false": ["Der er rigeligt CO<sub>2</sub> i vandet", "Når der er mindre dyreplankton bliver der ikke ædt så meget planteplankton."]
 
     }, {
         "spm": "Hvad betyder den store mængde planteplankton for bundplanterne i søen?",
@@ -211,31 +234,31 @@
         "forkerte_svar": ["Bundplanterne vokser hurtigere, fordi de kan optage næring direkte fra planteplankton", "Ingenting"],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": ""
-
+        "feedback": "",
+        "feedback_false": ["", ""]
     }, {
-        "spm": "Den store mængde planteplankton, som ikke bliver ædt, dør efterhånden og synker til bunds. Hvad sker der med det døde planteplankton?",
-        "svar": ["Bakterier og dyr på søbunden nedbryder det ved respiration - processen bruger ilt."],
+        "spm": " Den store mængde planteplankton, som ikke bliver ædt, dør efterhånden og synker til bunds. Hvad sker der med det døde planteplankton?",
+        "svar": ["Bakterier og dyr på søbunden nedbryder det ved respiration, processen bruger ilt."],
         "forkerte_svar": ["Det foretager fotosyntese og producerer ilt", "Det begraves i bund-laget og omdannes til olie og kul. Processen frigiver ilt."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Dødt planteplankton kan ikke foretage fotosyntese. Dannelse af kul og olie tager mange millioner år, så den proces har ingen betydning i denne sammenhæng."
-
+        "feedback": "Dødt planteplankton kan ikke foretage fotosyntese. Dannelse af kul og olie tager mange millioner år, så den proces har ingen betydning i denne sammenhæng.",
+        "feedback_false": ["Dødt planteplankton kan ikke foretage fotosyntese", "Dannelsen af kul og olie tager mange millioner år, så den proces har ingen betydning i denne sammenhæng."]
     }, {
         "spm": "Der skal bruges meget ilt til at nedbryde den store mængde dødt planteplankton, så der opstår iltmangel ved søbunden. Hvilke organismer dør først af iltmangel?",
         "svar": ["Bunddyrene (muslinger, snegle osv)"],
         "forkerte_svar": ["Bakterierne", "Dyreplankton"],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "Bakterierne er ikke de mest følsomme for iltmangel. Dyreplankton befinder sig mest i de øverste vandlag, hvor iltniveauet er højere end ved bunden."
-
+        "feedback": "Bakterierne er ikke de mest følsomme for iltmangel. Dyreplankton befinder sig mest i de øverste vandlag, hvor iltniveauet er højere end ved bunden.",
+        "feedback_false": ["Bakterierne er ikke de mest følsomme for iltmangel.", "Dyreplankton befinder sig mest i de øverste vandlag, hvor iltniveauet er højere end ved bunden."]
     }, {
         "spm": "Hvor ender de nitrat- og fosfat-ioner, som startede hele processen?",
         "svar": ["De frigives igen til vandet, når de døde organismer nedbrydes, og holder dermed væksten af planteplankton i gang."],
         "forkerte_svar": ["De lægger sig på søbunden som tungt-opløselige salte.", "De fordamper efterhånden til atmosfæren."],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
-        "feedback": "En del af fosfaten kan fælde ud som tungtopløselige salte. Men alle nitrat-salte er letopløselige, så de danner aldrig bundfald i en sø. Salte fordamper kun ved meget høje temperaturer (over 600॰C)."
-
+        "feedback": "En del af fosfaten kan fælde ud som tungtopløselige salte. Men alle nitrat-salte er letopløselige, så de danner aldrig bundfald i en sø. Salte fordamper kun ved meget høje temperaturer (over 600॰C).",
+        "feedback_false": ["En del af fosfaten kan fælde ud som tungtopløselige salte. Men alle nitrat-salte er letopløselige, så de danner aldrig bundfald i en sø.", "Salte fordamper kun ved meget høje temperaturer (over 600<sup>o</sup>C)."]
     }]
 }

@@ -42,6 +42,29 @@ $(document).ready(function() {
         show_info(indeks);
     });
 
+    $(".btn_closeGUI").click(function() {
+        console.log("Hej");
+        $(".spm_togggle_container").slideToggle();
+        var isVisible = $(".btn_closeGUI").hasClass("glyphicon-chevron-up");
+
+        if (isVisible == true) {
+
+            //$(".gui_container").css("background-color", "#999");
+            $(".btn_closeGUI").switchClass("glyphicon-chevron-up", "glyphicon-chevron-down");
+
+        } else {
+
+            //$(".gui_container").css("background-color", "white");
+            $(".btn_closeGUI").switchClass("glyphicon-chevron-down", "glyphicon-chevron-up");
+            $(".skjult").remove();
+
+        }
+    });
+
+    viewArray[1].fadeOut(0);
+    viewArray[2].fadeOut(0);
+
+
 
 });
 
@@ -53,7 +76,7 @@ function generate_labels(state) {
         var element = jsonData.labels[i];
         console.log(i + " punkt");
         //viewArray[state].append("<div><img class='gif' src=" + element.pics[state] + "></div>");
-        $(".balance_labels_container").append("<span class='btn btn-xs btn-default balance_detalje_label'><span class='glyphicon glyphicon-search'> </span> " + element.element + "</span>");
+        $(".balance_labels_container").append("<span class='btn btn-xs btn-default balance_detalje_label'><span class='glyphicon glyphicon-info-sign'> </span> " + element.element + "</span>");
         $(".balance_detalje_label").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%")
             //$(".gif").eq(i).css("left", element.balance_pos[0] + "%").css("top", element.balance_pos[1] + "%");
     }
@@ -82,7 +105,7 @@ function show_info(indeks) {
     } else if (state == 1) {
 
     } else if (state == 2) {
-        UserMsgBox("body", "<h3>" + jsonData.genopretning_labels[indeks].element + "</h3><div class='embed-responsive embed-responsive-16by9'><iframe class='embed-responsive-item' src='https://www.youtube.com/embed/" + jsonData.genopretning_labels[indeks].genopretning_url + "?rel=0'></iframe></div>");
+        UserMsgBox("body", "<h3>" + jsonData.genopretning_labels[indeks].element + "</h3><div class='embed-responsive embed-responsive-16by9'><iframe class='embed-responsive-item' src='https://www.youtube.com/embed/" + jsonData.genopretning_labels[indeks].genopretning_url + "?rel=0' allowfullscreen></iframe></div>");
 
     }
 
@@ -111,25 +134,34 @@ function toggleView() {
     }
     if (state == 0) {
         $(".genopretning_labels_container").hide();
-        $(".balance_labels_container, .gui_container").show();
+        $(".balance_labels_container").show();
+        $(".bg_image").attr("src", "img/BG_balance.png");
+
     } else if (state == 1) {
         $(".balance_labels_container, .genopretning_labels_container").hide();
         $(".gui_container").show();
-    } else if (state == 2){
-        $(".balance_labels_container, .gui_container").hide();
+        $(".bg_image").attr("src", "img/BG_ubalance.png");
+    } else if (state == 2) {
+        $(".balance_labels_container").hide();
         $(".genopretning_labels_container").show();
+        $(".bg_image").attr("src", "img/genopretning.png");
+
     }
 }
 
 /*----------  Kør spørgsmål  ----------*/
 
 function poseQuestion() {
+    $(".gui_container").fadeIn(500);
+
+    console.log("posing q");
     $(".feedback_container").hide();
     $(".btn_tjek").show();
-        console.log("runder: " + runder);
+    console.log("runder: " + runder);
     var spmData = jsonData[state_Array[state]];
 
     if (state != 2) {
+        $(".spm_numbers").show();
 
         if (runder[state] < spmData.length) {
 
@@ -145,7 +177,7 @@ function poseQuestion() {
             svar_Array.push(spmData[runder[state]].svar);
 
             korrekt_svar = spmData[runder[state]].svar;
-            svar_Array = shuffle_Array(svar_Array);
+            //svar_Array = shuffle_Array(svar_Array);
 
             for (var i = 0; i < svar_Array.length; i++) {
                 svarHTML += "<div class='answerChoice radioWrap'><label class='rdo_label'><input name='radioName' type='radio' value='" + i + "'><span class='svar_txt'>" + svar_Array[i] + " </span></label></div>"
@@ -155,13 +187,20 @@ function poseQuestion() {
 
             $(".btn_tjek").click(tjek_svar);
         } else {
-            $(".spm").html("<h3>Du har besvaret alle spørgsmål <span class='label label-success'>korrekt</span>");
+            $(".spm").html("<h4>Tillykke!</h4>Du har besvaret alle spørgsmålene i quizzen <h4><span class='label_slut label label-success'>Korrekt</span></h4><p>Du kan tage quizzen igen eller undersøge en af de andre faner.");
             $(".svar").html("<div class='btn btn-info btn_forfra'>Tag quizzen igen</div>");
+            $(".btn_tjek").hide();
             $(".btn_forfra").click(function() {
                 genstart_quiz();
             });
         }
+    } else {
+        $(".spm_numbers").hide(); //html("Spørgsmål " + (runder[state] + 1) + " / " + spmData.length);
+        $(".spm").html("Se videoerne om genopretning af søens balance.");
+        $(".svar").html("");
+        $(".btn_tjek").hide();
     }
+    $(".radioWrap").shuffle_div_position();
 }
 
 /*----------  Tjek svar  ----------*/
@@ -170,17 +209,18 @@ function poseQuestion() {
 function tjek_svar() {
     var checked = $('input[name=radioName]:checked').val();
     var svar = svar_Array[checked];
+    console.log("checked: " + checked);
+    if (typeof(checked) != "undefined") {
+        if (korrekt_svar == svar) {
+            console.log("KORREKT")
 
-    if (korrekt_svar == svar) {
-        console.log("KORREKT")
+            feedback(true, checked);
 
-        feedback(true);
-
-    } else {
-        console.log("FORKERT!");
-        feedback(false);
+        } else {
+            console.log("FORKERT!");
+            feedback(false, checked);
+        }
     }
-
     console.log("svar: " + korrekt_svar + ", checked:" + $(".svar_txt").eq(checked).html());
 
 
@@ -190,51 +230,91 @@ function tjek_svar() {
 
 function visuel_feedback() {
 
-    $(".ubalance_container").append("<img class='img_overlay img-responsive' src='" + jsonData.overlays[state].overlaypics[runder[1]] + "'>");
-    $(".ubalance_container").find(".img_overlay").eq(1).fadeOut(0);
-    $(".ubalance_container").find(".img_overlay").eq(1).fadeIn(0);
 
-    $(".ubalance_container").find(".img_overlay").eq(0).fadeOut(0, function() {
-        $(".ubalance_container").find(".img_overlay").eq(0).remove();
-        console.log($(".ubalance_container").find(".img_overlay").length);
-    });
+    if (state == 0) {
 
+        if (runder[state] < jsonData.overlays[state].overlaypics.length) {
+            $(".gui_container").fadeOut(100);
+
+            $(".balance_container").prepend("<img class='balance_overlay img_overlay img-responsive' src='" + jsonData.overlays[state].overlaypics[runder[0]] + "'>");
+            //console.log("OL_length: " + $(".ubalance_overlay").length);
+
+            $(".balance_overlay").eq(0).fadeOut(0);
+            $(".balance_overlay").eq(1).fadeOut(3000);
+
+
+            $(".balance_overlay").eq(0).fadeIn(1500, function() {
+                $(".balance_overlay").eq(1).remove();
+
+                console.log($(".balance_container").find(".img_overlay").length);
+                runder.splice(state, 1, runder[state] + 1);
+                poseQuestion();
+            });
+        } else {
+            runder.splice(state, 1, runder[state] + 1);
+            poseQuestion();
+        }
+    } else if (state == 1) {
+        $(".gui_container").fadeOut(100);
+
+        $(".ubalance_container").prepend("<img class='ubalance_overlay img_overlay img-responsive' src='" + jsonData.overlays[state].overlaypics[runder[1]] + "'>");
+        console.log("OL_length: " + $(".ubalance_overlay").length);
+
+        $(".ubalance_overlay").eq(0).fadeOut(0);
+        $(".ubalance_overlay").eq(1).fadeOut(3000);
+
+        $(".ubalance_overlay").eq(0).fadeIn(1500, function() {
+            $(".ubalance_overlay").eq(1).remove();
+
+            console.log($(".ubalance_container").find(".img_overlay").length);
+            runder.splice(state, 1, runder[state] + 1);
+            poseQuestion();
+        });
+
+    }
+
+
+    //$(".ubalance_overlay").eq(1).fadeIn(1500);
 
 
 }
 
+
 /*----------  feedback - 1 skridt bring skridt 2 op ved click  ----------*/
 
 
-function feedback(svar) {
+function feedback(svar, checked) {
     $(".feedback_container").show();
     /* Hvis vi er i balance mode */
 
     if (state == 0) {
+        // alert("state: " + state);
         if (svar == true) {
-            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p>"+jsonData.balance_spm[runder[state]].feedback_true+"</p><div class='btn btn-primary ok_btn'>Fortsæt</div>");
+            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>" + jsonData.balance_spm[runder[state]].feedback_true + "</p><div class='btn btn-primary ok_btn'>Fortsæt</div>");
             $(".btn_tjek").hide();
         } else {
-            $(".feedback_container").html("<h4><span class='label label-danger'>Forkert</span></h4><p>Klik på de enkelte elementer og læs om dem.</p>");
+            if (jsonData.balance_spm[runder[state]].feedback_false[checked] != "") {
+                $(".feedback_container").html("<h4><span class='label label-danger'>Forkert</span></h4><p class='feedback_txt'>" + jsonData.balance_spm[runder[state]].feedback_false[checked] + "</p>");
+            } else {
+                $(".feedback_container").html("<h4><span class='label label-danger'>Forkert</span></h4><p class='feedback_txt'>Klik på de enkelte elementer og læs om dem.</p>");
+            }
         }
         /* Hvis vi er i ubalance mode */
-    } else if (state == 1){
+    } else if (state == 1) {
         if (svar == true) {
-            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p>Klik på fortsæt og se hvad der sker i visualiseringen</p><div class='btn btn-primary ok_btn'>Fortsæt</div>");
+            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>Klik på fortsæt og se hvordan processen påvirker søen.</p><div class='btn btn-primary ok_btn'>Fortsæt</div>");
             $(".btn_tjek").hide();
         } else {
-            alert(jsonData.ubalance_spm[runder[state]].feedback);
-             $(".feedback_container").html("<h4><span class='label label-danger'>Forkert</span></h4><p>"+jsonData.ubalance_spm[runder[state]].feedback+"</p>");
+            //alert(jsonData.ubalance_spm[runder[state]].feedback);
+            $(".feedback_container").html("<h4><span class='label label-danger'>Forkert</span></h4><p class='feedback_txt'>" + jsonData.ubalance_spm[runder[state]].feedback_false[checked] + "</p>");
         }
     }
 
     $(".ok_btn").click(function() {
+        console.log("ok BTN");
         if (svar == true) {
-            if (state == 1) {
-                visuel_feedback();
-            }
-            runder.splice(state, 1, runder[state] + 1);
-            poseQuestion();
+            visuel_feedback();
+
         }
     });
 }
@@ -244,4 +324,9 @@ function feedback(svar) {
 function genstart_quiz() {
     runder.splice(state, 1, 0);
     poseQuestion();
+    if (state == 0) {
+        $(".balance_container").html('<img class="img_overlay img-responsive" src="img/balance01.png" class="img-responsive" />');
+    } else if (state == 1) {
+        $(".ubalance_container").html('<img class="img_overlay img-responsive" src="img/balance01.png" class="img-responsive" />');
+    }
 }

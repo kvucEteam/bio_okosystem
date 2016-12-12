@@ -1,6 +1,8 @@
 .png_container {
     position: absolute;
     top: 0px;
+    width: 100%;
+    height: 100%;
 }
 
 .lake_container {
@@ -9,20 +11,23 @@
     background-color: white;
 }
 
-.balance_labels_container{
-    z-index:200;
+.balance_labels_container {
+    z-index: 200;
 }
 
 .gui_container {
     position: absolute;
     background-color: rgba(248, 248, 246, 0.8);
-    width: 20%;
+    width: 30%;
     /* height: 240px; */
     margin-top: 0px;
     margin-left: 0px;
     border-radius: 0px 0px 4px 0px;
     padding: 10px;
     z-index: 1;
+    max-height: 84%;
+    overflow: auto;
+    min-height: 5%;
 }
 
 .exp_container {
@@ -79,6 +84,7 @@
 
 .rdo_label:hover {
     background-color: white;
+    width: 100%;
 }
 
 .info_container {
@@ -117,9 +123,11 @@
     }
 }
 
-/*.img_overlay {
+.img_overlay {
     position: absolute;
-}*/
+    width: 100%;
+    height: 100%;
+}
 
 .spm {
     margin: 10px 10px 10px 0px;
@@ -127,9 +135,38 @@
     font-size: 14px
 }
 
-.spm_numbers{font-size: 10px;color: #666;margin-bottom: -5px;}
+.spm_numbers,
+.skjult {
+    font-size: 10px;
+    color: #666;
+    margin-bottom: -5px;
+}
 
-.btn_tjek, .ok_btn{
-    margin-top:20px;
-    float:right;
+.btn_tjek,
+.ok_btn {
+    margin-top: 20px;
+    float: right;
+}
+
+.btn_closeGUI {
+    color: #666;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.feedback_txt {
+  
+    padding: 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.svar{
+        -webkit-user-select: none;
+}
+
+.glyphicon{
+        color: #666;
 }
