@@ -23,7 +23,6 @@ var state = 0,
 
 
 $(document).ready(function() {
-
     $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));
     $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
     $('li').click(toggleView);
@@ -31,7 +30,6 @@ $(document).ready(function() {
 
     generate_labels(state);
     toggleView();
-
     $(".balance_detalje_label").click(function() {
         var indeks = $(this).index(".balance_detalje_label");
         show_info(indeks);
@@ -290,7 +288,7 @@ function feedback(svar, checked) {
     if (state == 0) {
         // alert("state: " + state);
         if (svar == true) {
-            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>" + jsonData.balance_spm[runder[state]].feedback_true + "</p><div class='btn btn-primary ok_btn'>Fortsæt</div>");
+            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>" + jsonData.balance_spm[runder[state]].feedback_true + "</p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div>");
             $(".btn_tjek").hide();
         } else {
             if (jsonData.balance_spm[runder[state]].feedback_false[checked] != "") {
@@ -302,7 +300,7 @@ function feedback(svar, checked) {
         /* Hvis vi er i ubalance mode */
     } else if (state == 1) {
         if (svar == true) {
-            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>Klik på fortsæt og se hvordan processen påvirker søen.</p><div class='btn btn-primary ok_btn'>Fortsæt</div>");
+            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>Klik på fortsæt og se hvordan processen påvirker søen.</p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div>");
             $(".btn_tjek").hide();
         } else {
             //alert(jsonData.ubalance_spm[runder[state]].feedback);

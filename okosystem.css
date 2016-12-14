@@ -112,14 +112,32 @@
 }
 
 @media all and (max-width: 1170px) {
-    .detalje_label {
+    .balance_detalje_label,
+    .genopretning_detalje_label,
+    .gui_container,
+    .btn_tjek,
+    .label,
+    .ok_btn,
+    .btn_forfra .spm {
         font-size: 1.3vw;
+    }
+    .spm_numbers {
+        font-size: 1vw;
     }
 }
 
 @media all and (min-width: 1171px) {
-    .detalje_label {
+    .balance_detalje_label,
+    .genopretning_detalje_label,
+    .btn_tjek,
+    .label,
+    .ok_btn,
+    .btn_forfra .gui_container,
+    .spm {
         font-size: 14px;
+    }
+    .spm_numbers {
+        font-size: 10px;
     }
 }
 
@@ -132,12 +150,10 @@
 .spm {
     margin: 10px 10px 10px 0px;
     font-weight: bold;
-    font-size: 14px
 }
 
 .spm_numbers,
 .skjult {
-    font-size: 10px;
     color: #666;
     margin-bottom: -5px;
 }
@@ -145,8 +161,9 @@
 .btn_tjek,
 .ok_btn,
 .btn_forfra {
-    margin-top: 20px;
+    margin-top: 0px;
     float: right;
+    margin-right: 0;
 }
 
 .btn_closeGUI {
@@ -158,9 +175,10 @@
 }
 
 .feedback_txt {
-    padding: 6px;
+    padding: 0;
     border-radius: 4px;
     font-weight: bold;
+    margin-top: 4%;
 }
 
 .svar {
@@ -169,4 +187,13 @@
 
 .glyphicon {
     color: #666;
+}
+
+.answerChoice {
+    margin-top: -4px;
+}
+
+h4 {
+    margin-top:2%;
+    margin-bottom:1%;
 }
