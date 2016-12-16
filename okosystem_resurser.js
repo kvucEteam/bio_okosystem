@@ -4,7 +4,7 @@
      var HTML_array = [];
 
 
-     $('.instr_container').html(instruction("Se 2 biologer forklare om de forskellige ting de kan gøre for at genoprette en søs balance."));
+     $('.instr_container').html(instruction("Se videoerne hvor to biologer forklarer om hvordan man kan genoprette balancen i en forurenet sø."));
      console.log("break");
      for (var i = 0; i < jsonData.genopretning_labels.length; i++) {
 

@@ -262,7 +262,7 @@ function visuel_feedback() {
         $(".ubalance_overlay").eq(1).fadeOut(3000);
 
         $(".ubalance_overlay").eq(0).fadeIn(3000, function() {
-            //$(".ubalance_overlay").eq(1).remove();
+            $(".ubalance_overlay").eq(1).remove();
 
             console.log($(".ubalance_container").find(".img_overlay").length);
             runder.splice(state, 1, runder[state] + 1);
@@ -323,8 +323,8 @@ function genstart_quiz() {
     runder.splice(state, 1, 0);
     poseQuestion();
     if (state == 0) {
-        $(".balance_container").html('<img class="img_overlay img-responsive" src="img/balance01.png" class="img-responsive" />');
+        $(".balance_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/balance01.png"  />');
     } else if (state == 1) {
-        $(".ubalance_container").html('<img class="img_overlay img-responsive" src="img/balance01.png" class="img-responsive" />');
+        $(".ubalance_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/balance01.png" />');
     }
 }

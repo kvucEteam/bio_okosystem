@@ -18,14 +18,14 @@
 
     "labels": [{
         "element": "Sol",
-        "infotekst": "Al energi på jorden stammer fra solen. Energien fra solen omdannes i planterne gennem fotosyntese til kemisk energi i form af glukose (6CO<sub>2</sub> + 6H<sub>2</sub>O --> C6H<sub>12</sub>O6 + 6O<sub>2</sub>)",
+        "infotekst": "Al energi på jorden stammer fra solen. Energien fra solen omdannes i planterne gennem fotosyntese til kemisk energi i form af glukose (6CO<sub>2</sub> + 6H<sub>2</sub>O --> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>)",
         "infopic": "img/images_usmsgbx/info_usol.jpg",
         "balance_pos": ["70", "6"],
         "ubalance_pos": ["", ""]
 
     }, {
         "element": "Nitrat og fosfat",
-        "infotekst": "Nitrat (NH<sub>3</sub><sup>-</sup>) og fosfat (PO<sub>4</sub><sup>3-</sup>) kaldes næringssalte, fordi de er nødvendige for planters vækst.<br/> I en sø i balance er indholdet af næringssalte forholdsvis lavt. Der kan tilføres ekstra nitrat fra landbruget, når markerne gødes. Den nitrat afgrøderne ikke kan nå at optage udvaskes fra markerne og ender i søer og åer. Fosfat tilføres også fra landbruget, men ca. halvdelen af den fosfat man finder i søer kommer fra industri og husholdninger. <br/>En høj koncentration af næringsstoffer i vandet får planteplankton til at formere sig hurtigere.",
+        "infotekst": "Nitrat (NO<sub>3</sub><sup>-</sup>) og fosfat (PO<sub>4</sub><sup>3-</sup>) kaldes næringssalte, fordi de er nødvendige for planters vækst.<br/> I en sø i balance er indholdet af næringssalte forholdsvis lavt. Der kan tilføres ekstra nitrat fra landbruget, når markerne gødes. Den nitrat afgrøderne ikke kan nå at optage udvaskes fra markerne og ender i søer og åer. Fosfat tilføres også fra landbruget, men ca. halvdelen af den fosfat man finder i søer kommer fra industri og husholdninger. <br/>En høj koncentration af næringsstoffer i vandet får planteplankton til at formere sig hurtigere.",
         "infopic": "img/images_usmsgbx/info_phosphater.jpg",
         "balance_pos": ["74.5", "43"],
         "ubalance_pos": ""
@@ -76,7 +76,7 @@
 
     }, {
         "element": "Døde planter og dyr",
-        "infotekst": "Døde planter og dyr synker ned på søens bund. <br/>Her bliver de spist og nedbrudt af bunddyr og af bakterier. Meget af nedbrydningen foregår ved respiration (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6H<sub>2</sub>O) og bruger derfor ilt. <br/>Men hvis der er for mange døde organismer, bruges ilten op, og de døde organismer bliver liggende som et slamlag.<br/> Specielle bakterier kan nedbryde organisk stof uden ilt, men de producerer ofte den giftige gas hydrogensulfid ('svovlbrinte') som affaldsprodukt, og det kan slå fiskene i søen ihjel.",
+        "infotekst": "Døde planter og dyr synker ned på søens bund. <br/>Her bliver de spist og nedbrudt af bunddyr og af bakterier. Meget af nedbrydningen foregår ved respiration (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6H<sub>2</sub>O) og bruger derfor ilt. <br/>Men hvis der er for mange døde organismer, bruges ilten op, og de døde organismer bliver liggende som et slamlag (også kaldet sedimentlag). <br/> Specielle bakterier kan nedbryde organisk stof uden ilt, men de producerer ofte den giftige gas hydrogensulfid ('svovlbrinte') som affaldsprodukt, og det kan slå fiskene i søen ihjel.",
         "infopic": "img/images_usmsgbx/info_deadplants.jpg",
         "balance_pos": ["62", "93"],
         "ubalance_pos": ""
