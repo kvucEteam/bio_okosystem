@@ -23,7 +23,6 @@ var state = 0,
 
 
 $(document).ready(function() {
-
     $("#explanationwrapper").html(explanation(jsonData.userInterface.explanation));
     $('.instr_container').html(instruction(jsonData.userInterface.instruktion));
     $('li').click(toggleView);
@@ -31,7 +30,6 @@ $(document).ready(function() {
 
     generate_labels(state);
     toggleView();
-
     $(".balance_detalje_label").click(function() {
         var indeks = $(this).index(".balance_detalje_label");
         show_info(indeks);
@@ -264,7 +262,7 @@ function visuel_feedback() {
         $(".ubalance_overlay").eq(1).fadeOut(3000);
 
         $(".ubalance_overlay").eq(0).fadeIn(3000, function() {
-            //$(".ubalance_overlay").eq(1).remove();
+            $(".ubalance_overlay").eq(1).remove();
 
             console.log($(".ubalance_container").find(".img_overlay").length);
             runder.splice(state, 1, runder[state] + 1);
@@ -290,7 +288,7 @@ function feedback(svar, checked) {
     if (state == 0) {
         // alert("state: " + state);
         if (svar == true) {
-            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>" + jsonData.balance_spm[runder[state]].feedback_true + "</p><div class='btn btn-primary ok_btn'>Fortsæt</div>");
+            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>" + jsonData.balance_spm[runder[state]].feedback_true + "</p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div>");
             $(".btn_tjek").hide();
         } else {
             if (jsonData.balance_spm[runder[state]].feedback_false[checked] != "") {
@@ -302,7 +300,7 @@ function feedback(svar, checked) {
         /* Hvis vi er i ubalance mode */
     } else if (state == 1) {
         if (svar == true) {
-            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>Klik på fortsæt og se hvordan processen påvirker søen.</p><div class='btn btn-primary ok_btn'>Fortsæt</div>");
+            $(".feedback_container").html("<h4><span class='label label-success'>Korrekt</span></h4><p class='feedback_txt'>Klik på fortsæt og se hvordan processen påvirker søen.</p><div class='btn btn-xs btn-primary ok_btn'>Fortsæt</div>");
             $(".btn_tjek").hide();
         } else {
             //alert(jsonData.ubalance_spm[runder[state]].feedback);
@@ -325,8 +323,8 @@ function genstart_quiz() {
     runder.splice(state, 1, 0);
     poseQuestion();
     if (state == 0) {
-        $(".balance_container").html('<img class="img_overlay img-responsive" src="img/balance01.png" class="img-responsive" />');
+        $(".balance_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/balance01.png"  />');
     } else if (state == 1) {
-        $(".ubalance_container").html('<img class="img_overlay img-responsive" src="img/balance01.png" class="img-responsive" />');
+        $(".ubalance_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/balance01.png" />');
     }
 }

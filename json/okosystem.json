@@ -2,7 +2,7 @@
     "userInterface": {
         "header": "Søen som økosystem",
         "instruktion": "Gå på opdagelse i søens økosystem.",
-        "explanation": "I fanebladet “Søen i balance” kan du lære om økosystemet i en klar og næringsfattig sø.  I fanebladet “Søen i ubalance” kan du lære om hvordan øgede mængder af nitrat og fosfat påvirker søens økosystem.  I fanebladet “Genopretning” kan du lære om hvad man kan gøre for at genetablere balance i søens økosystem.",
+        "explanation": "I fanebladet <b>Søen i balance</b> kan du lære om økosystemet i en klar og næringsfattig sø.  <br/>I fanebladet <b>Søen i ubalance</b> kan du lære om hvordan øgede mængder af nitrat og fosfat påvirker søens økosystem.  <br/>I fanebladet <b>Genopretning</b> kan du lære om hvad man kan gøre for at genetablere balance i søens økosystem.",
         "titel": "Nytårsforsætter"
     },
     "actionpile": [{
@@ -18,35 +18,35 @@
 
     "labels": [{
         "element": "Sol",
-        "infotekst": "Al energi på jorden stammer fra solen. Energien fra solen omdannes i planterne gennem fotosyntese til kemisk energi i form af glukose (6CO<sub>2</sub> + 6H<sub>2</sub>O --> C6H<sub>12</sub>O6 + 6O<sub>2</sub>)",
+        "infotekst": "Al energi på jorden stammer fra solen. Energien fra solen omdannes i planterne gennem fotosyntese til kemisk energi i form af glukose (6CO<sub>2</sub> + 6H<sub>2</sub>O --> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>)",
         "infopic": "img/images_usmsgbx/info_usol.jpg",
         "balance_pos": ["70", "6"],
         "ubalance_pos": ["", ""]
 
     }, {
         "element": "Nitrat og fosfat",
-        "infotekst": "I en sø i balance er indholdet af næringssalte som nitrat (NH<sub>3</sub><sup>-</sup>) og fosfat (PO<sub>4</sub><sup>3-</sup>) forholdsvis lavt. Der kan tilføres ekstra nitrat fra landbruget, når markerne gødes. Den nitrat planterne ikke kan nå at optage udvaskes fra markerne og ender i søer og åer. Fosfat tilføres også fra landbruget, men ca. halvdelen af den fosfat man finder i søer kommer fra industri og husholdninger.",
+        "infotekst": "Nitrat (NO<sub>3</sub><sup>-</sup>) og fosfat (PO<sub>4</sub><sup>3-</sup>) kaldes næringssalte, fordi de er nødvendige for planters vækst.<br/> I en sø i balance er indholdet af næringssalte forholdsvis lavt. Der kan tilføres ekstra nitrat fra landbruget, når markerne gødes. Den nitrat afgrøderne ikke kan nå at optage udvaskes fra markerne og ender i søer og åer. Fosfat tilføres også fra landbruget, men ca. halvdelen af den fosfat man finder i søer kommer fra industri og husholdninger. <br/>En høj koncentration af næringsstoffer i vandet får planteplankton til at formere sig hurtigere.",
         "infopic": "img/images_usmsgbx/info_phosphater.jpg",
         "balance_pos": ["74.5", "43"],
         "ubalance_pos": ""
 
     }, {
         "element": "Planteplankton",
-        "infotekst": "Planteplankton er små organismer, der lever/flyder i vand og som indeholder klorofyl. De kan derfor udføre fotosyntese (6CO<sub>2</sub> + 6h<sub>2</sub>O --> C<sub>6</sub>h<sub>12</sub>O<sub>6</sub>+ 6O<sub>2</sub>). Da de får energi fra solen, udgør de første led i en fødekæde, også kaldet det første trofiske niveau. Det vil sige at de ikke er afhængige af at spise andre organismer, men kan nøjes med at indtage uorganiske næringsstoffer. De er derfor autotrofe. Planteplankton kaldes også mikroalger. De kan være encellede eller flercellede. Nogle planteplankton er prokaryote, altså uden kerne. De kaldes cyanobakterier. Andre er eukaryote.",
+        "infotekst": "Planteplankton er små organismer, der lever/flyder i vand og som indeholder klorofyl. <br/>De kan derfor udføre fotosyntese (6CO<sub>2</sub> + 6H<sub>2</sub>O --> C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>+ 6O<sub>2</sub>). <br/>Da de får energi fra solen, udgør de første led i en fødekæde, også kaldet det første trofiske niveau. Det vil sige at de ikke er afhængige af at spise andre organismer, men kan nøjes med at indtage uorganiske næringsstoffer. De er derfor autotrofe. Planteplankton kaldes også mikroalger. De kan være encellede eller flercellede. Nogle planteplankton er prokaryote, altså uden kerne. De kaldes cyanobakterier. Andre er eukaryote.",
         "infopic": "img/images_usmsgbx/info_alger.jpg",
         "balance_pos": ["32", "21"],
         "ubalance_pos": ["", ""]
 
     }, {
         "element": "Dyreplankton",
-        "infotekst": "Dyreplankton er organismer som flyder mere eller mindre passivt med vandstrømme og som ikke indeholder klorofyl. De kan ikke udføre fotosyntese men lever af at spise alger og andre planktonorganismer. Planteædere udgør andet led i en fødekæde, også kaldet andet trofiske niveau. Der findes både encellet dyreplankton (f.eks. ciliater og flagellater) og flercellet dyreplankton (f.eks. hjuldyr og krebsdyr). I ferskvand er de almindeligste krebsdyr dafnier [billede?] og vandlopper.",
+        "infotekst": "Dyreplankton er organismer som flyder mere eller mindre passivt med vandstrømme og som ikke indeholder klorofyl. <br/>De kan ikke udføre fotosyntese men lever af at spise planteplankton og andre planktonorganismer. <br/>Planteædere udgør andet led i en fødekæde, også kaldet andet trofiske niveau. <br/>Der findes både encellet dyreplankton (f.eks. ciliater og flagellater) og flercellet dyreplankton (f.eks. hjuldyr og krebsdyr). <br/>I ferskvand er de almindeligste krebsdyr dafnier og vandlopper.",
         "infopic": "img/images_usmsgbx/info_dyreplankton.jpg",
         "balance_pos": ["56", "39"],
         "ubalance_pos": ""
 
     }, {
         "element": "Fredfisk",
-        "infotekst": "Fredfisk er fisk, der ikke lever af at spise andre fisk, men i stedet lever af smådyr, dyreplankton og plantedele. Dyr som spiser planteædere udgør tredje led i en fødekæde, også kaldet tredje trofiske niveau. Eksempler på fredfisk er karpe, skalle og brasen. Brasen kan lave sin mund om til et rør, så den kan “støvsuge” mudder op fra bunden, og på den måde indtage orme, larver, snegle, insekter og muslinger. En brasen har ikke tænder i munden, så føden knuses i dens svælg.",
+        "infotekst": "Fredfisk er fisk, der ikke lever af at spise andre fisk, men i stedet lever af smådyr, dyreplankton og plantedele. <br/>Dyr som spiser planteædere udgør tredje led i en fødekæde, også kaldet tredje trofiske niveau. <br/>Eksempler på fredfisk er karpe, skalle og brasen. Brasen kan lave sin mund om til et rør, så den kan “støvsuge” mudder op fra bunden, og på den måde indtage orme, larver, snegle, insekter og muslinger.<br/> En brasen har ikke tænder i munden, så føden knuses i dens svælg.",
         "infopic": "img/images_usmsgbx/info_fredfisk.jpg",
         "balance_pos": ["41", "62.5"],
         "ubalance_pos": ["", ""],
@@ -54,7 +54,7 @@
 
     }, {
         "element": "Rovfisk",
-        "infotekst": "Rovfisk er fisk der lever af at spise andre fisk. De udgør fjerde led i en fødekæde, også kaldet fjerde trofiske niveau. Eksempler på rovfisk er gedde, aborre og ørred. Gedden har mange sylespidse tænder, som vender bagud. Derfor kan den ikke give slip på sit bytte, hvis den først har bidt sig fast.",
+        "infotekst": "Rovfisk er fisk der lever af at spise andre fisk. <br/>De udgør fjerde led i en fødekæde, også kaldet fjerde trofiske niveau. <br/>Eksempler på rovfisk er gedde, aborre og ørred. Gedden har mange sylespidse tænder, som vender bagud. <br/>Derfor kan den ikke give slip på sit bytte, hvis den først har bidt sig fast.",
         "infopic": "img/images_usmsgbx/info_rovfisk.jpg",
         "balance_pos": ["66", "68"],
         "ubalance_pos": "",
@@ -62,28 +62,28 @@
 
     }, {
         "element": "Bundplanter",
-        "infotekst": "Bundplanter har klorofyl og kan foretage fotosyntese ligesom planteplankton, men sidder fast på bunden. Et eksempel på en bundplante er vandpest, som er en almindelig akvarieplante i Danmark",
+        "infotekst": "Bundplanter har grønkorn og kan foretage fotosyntese ligesom planteplankton, men sidder fast på bunden. <br/>Et eksempel på en bundplante er vandpest, som er en almindelig akvarieplante i Danmark",
         "infopic": "img/images_usmsgbx/info_bundplanter.jpg",
         "balance_pos": ["9", "79"],
         "ubalance_pos": ""
 
     }, {
         "element": "Bunddyr og bakterier",
-        "infotekst": "På søens bund findes mange forskellige dyr, f.eks. muslinger, snegle, krebsdyr, og larver af en lang række forskellige insekter (slørvinger, vårfluer, biller, m.m.). Nogle af bunddyrene spiser levende alger, smådyr og bakterier, mens andre lever af døde dyr og planter og derfor hører til nedbryder-fødekæden. I søbunden findes også en stor mængde forskellige bakterier, som lever af at nedbryde organisk materiale fra de døde dyr og planter og fra dyrenes afføring. Disse bakterier sørger for at næringsstoffer som nitrat og fosfat frigives til vandet, så de kan genbruges af alger og bundplanter. Meget af nedbrydningen foregår ved respiration (C<sub>6</sub>h<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6h<sub>2</sub>O), og den bruger altså ilt.",
+        "infotekst": "På søens bund findes mange forskellige dyr, f.eks. muslinger, snegle, krebsdyr, og larver af en lang række forskellige insekter (slørvinger, vårfluer, biller, m.m.). <br/>Nogle af bunddyrene spiser levende planteplankton, smådyr og bakterier, mens andre lever af døde dyr og planter og derfor hører til nedbryder-fødekæden.<br/> I søbunden findes også en stor mængde forskellige bakterier, som lever af at nedbryde organisk materiale fra de døde dyr og planter og fra dyrenes afføring. <br/>Disse bakterier sørger for at næringsstoffer som nitrat og fosfat frigives til vandet, så de kan genbruges af planteplankton og bundplanter. <br/>Meget af nedbrydningen foregår ved respiration (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> → 6CO<sub>2</sub> + 6H<sub>2</sub>O), og den bruger altså ilt.",
         "infopic": "img/images_usmsgbx/info_bunddyr.jpg",
         "balance_pos": ["35", "88"],
         "ubalance_pos": ""
 
     }, {
         "element": "Døde planter og dyr",
-        "infotekst": "Døde planter og dyr synker ned på søens bund. Her bliver de spist og nedbrudt af bunddyr og af bakterier. Meget af nedbrydningen foregår ved respiration (C<sub>6</sub>h<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6h<sub>2</sub>O) og bruger derfor ilt. Men hvis der er for mange døde organismer, bruges ilten op, og de døde organismer bliver liggende som et slamlag. Specielle bakterier kan nedbryde organisk stof uden ilt, men de producerer ofte den giftige gas hydrogensulfid (“svovlbrinte”) som affaldsprodukt, og det kan slå fiskene i søen ihjel.",
+        "infotekst": "Døde planter og dyr synker ned på søens bund. <br/>Her bliver de spist og nedbrudt af bunddyr og af bakterier. Meget af nedbrydningen foregår ved respiration (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6H<sub>2</sub>O) og bruger derfor ilt. <br/>Men hvis der er for mange døde organismer, bruges ilten op, og de døde organismer bliver liggende som et slamlag (også kaldet sedimentlag). <br/> Specielle bakterier kan nedbryde organisk stof uden ilt, men de producerer ofte den giftige gas hydrogensulfid ('svovlbrinte') som affaldsprodukt, og det kan slå fiskene i søen ihjel.",
         "infopic": "img/images_usmsgbx/info_deadplants.jpg",
         "balance_pos": ["62", "93"],
         "ubalance_pos": ""
 
     }, {
         "element": "Iltniveau",
-        "infotekst": "Vandets iltindhold er en balance mellem ilt produceret ved fotosyntese, ilt forbrugt ved respiration og tilførsel af ilt fra atmosfæren. Man kan måle vandets iltindhold med en elektrode. Iltniveauet kan svinge fra 0 mg/L til over 20 mg/L henover et år. Der er også døgnudsving, da planterne jo kun producerer ilt ved fotosyntese i dagslys, imens alle organismer i søen respirerer hele døgnet. Så længe niveauet er over ca. 8 mg/L har de fleste fisk og smådyr ingen problemer med at trække vejret, og hvis niveauet kommer under ca. 4 mg/L har de fleste vandlevende dyr problemer med at få ilt nok.",
+        "infotekst": "Vandets iltindhold er en balance mellem ilt produceret ved fotosyntese, ilt forbrugt ved respiration og tilførsel af ilt fra atmosfæren. <br/>Man kan måle vandets iltindhold med en elektrode. Iltniveauet kan svinge fra 0 mg/L til over 20 mg/L henover et år. Der er også døgnudsving, da planterne jo kun producerer ilt ved fotosyntese i dagslys, imens alle organismer i søen respirerer hele døgnet. <br/>Så længe niveauet er over ca. 8 mg/L har de fleste fisk og smådyr ingen problemer med at trække vejret, og hvis niveauet kommer under ca. 4 mg/L har de fleste vandlevende dyr problemer med at få ilt nok.",
         "infopic": "img/images_usmsgbx/info_ilt.jpg",
         "balance_pos": ["87", "70"],
         "ubalance_pos": ""
@@ -96,7 +96,7 @@
         "genopretning_url": "sfw1AeinNUE"
     },{
         "element": "Rovfisk",
-        "balance_pos": ["75", "78"],
+        "balance_pos": ["18", "75"],
         "ubalance_pos": "",
         "genopretning_url": "U7yAQXhYrxk"
     }, {
@@ -165,12 +165,12 @@
         "spm": "Udpeg fotosyntese-reaktionen",
         "svar": "6CO<sub>2</sub> + 6H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>",
         "forkerte_svar": ["C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> →  2CH<sub>3</sub>CH<sub>2</sub>OH + 2CO<sub>2</sub>", "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>  → 6CO<sub>2</sub> + 6H<sub>2</sub>O"],
-        "feedback_true": "Både bundplanter og planteplankton kan udføre fotosyntese, og er derfor første trofiske niveau i fødekæden.",
+        "feedback_true": "Dette reaktionsskema viser fotosyntesen, hvor kuldioxid og vand omdannes til glukose og ilt ved hjælp af solenergi.",
         "feedback_false": ["Dette reaktionsskema viser en gæringsreaktion, hvor glukose omdannes til ethanol og kuldioxid.", "Det er forkert. Dette reaktionsskema viser respiration, hvor glukose under forbrug af ilt nedbrydes til kuldioxid og vand."]
     }, {
         "spm": "Hvilke organismer udfører respiration?",
         "svar": "Alle levende organismer",
-        "forkerte_svar": ["Dyreplankton og bundplanter", "Dyreplankton, fredfisk og rovfisk"],
+        "forkerte_svar": ["Planteplankton og bundplanter", "Dyreplankton, fredfisk og rovfisk"],
         "feedback_true": "Alle levende organismer udfører respiration",
         "feedback_false": ["Planteplankton og bundplanter er ikke de eneste som udfører respiration", "Dyreplankton, fredfisk og rovfisk er ikke de eneste som udfører respiration"]
     }, {
@@ -197,8 +197,8 @@
         "feedback_false": ["Der er flere kilder til udledning af næringssalte.", "Der er flere kilder til udledning af næringssalte."]
     }, {
         "spm": "Når søen tilføres ekstra nitrat og fosfat, hvad sker der så med mængden af planteplankton?",
-        "svar": ["Mængden øges, fordi algerne vokser og formerer sig hurtigere"],
-        "forkerte_svar": ["Ingen ændring", "Mængden mindskes, fordi algerne vokser og formerer sig langsommere"],
+        "svar": ["Mængden øges, fordi planteplankton vokser og formerer sig hurtigere"],
+        "forkerte_svar": ["Ingen ændring", "Mængden mindskes, fordi planteplankton vokser og formerer sig langsommere"],
         "konsekvens": ["", ""],
         "konsekvens_pics": ["", ""],
         "feedback": "",
