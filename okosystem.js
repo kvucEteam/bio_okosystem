@@ -325,6 +325,6 @@ function genstart_quiz() {
     if (state == 0) {
         $(".balance_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/balance01.png"  />');
     } else if (state == 1) {
-        $(".ubalance_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/balance01.png" />');
+        $(".ubalance_container").html('<img class="img_overlay img-responsive ubalance_overlay" src="img/Ubalance01.png" />');
     }
 }
