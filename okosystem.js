@@ -49,12 +49,13 @@ $(document).ready(function() {
 
             //$(".gui_container").css("background-color", "#999");
             $(".btn_closeGUI").switchClass("glyphicon-chevron-up", "glyphicon-chevron-down");
+            $(".toggle_info").remove();
+
 
         } else {
-
+            $(".gui_container").prepend("<p class='toggle_info'>Indhold skjult</p>");   
             //$(".gui_container").css("background-color", "white");
             $(".btn_closeGUI").switchClass("glyphicon-chevron-down", "glyphicon-chevron-up");
-            $(".skjult").remove();
 
         }
     });
@@ -63,6 +64,7 @@ $(document).ready(function() {
     viewArray[2].fadeOut(0);
 
 
+microhint($(".gui_container"), "Besvar spørgsmålene i quizzen og lær om fødekæden i søen. Klik på hvert info-punkt for at lære mere.");
 
 });
 
